@@ -1,0 +1,20 @@
+# Виртуальное окружение
+.venv/
+venv/
+env/
+
+# Python кэш
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Переменные окружения (содержат пароли!)
+.env
+.env.local
+
+# PyCharm
+.idea/
+
+# Логи
+*.log
