@@ -59,7 +59,7 @@ cd PySPO
 Создайте базу данных PostgreSQL:
 
 ```sql
-CREATE DATABASE testdb;
+CREATE DATABASE testdb01;
 ```
 
 ### 3. Бэкенд
