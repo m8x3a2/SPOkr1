@@ -69,11 +69,16 @@ def submit(data: schemas.SubmitAnswer, db: Session = Depends(get_db),
     db.refresh(result)
     return result
 
-@app.get("/my-results", response_model=list[schemas.ResultOut])
+@app.get("/my-results")
 def my_results(db: Session = Depends(get_db), user: models.User = Depends(auth.get_current_user)):
-    return db.query(models.Result).filter(models.Result.user_id == user.id).all()
+    results = db.query(models.Result).filter(models.Result.user_id == user.id).all()
+    output = []
+    for r in results:
+        total = db.query(models.Question).filter(models.Question.test_id == r.test_id).count()
+        output.append({"test_id": r.test_id, "score": r.score, "total": total})
+    return output
 
-# --- ADMIN ---
+# --- ADMIN: ТЕСТЫ (полный CRUD) ---
 
 @app.post("/admin/tests", response_model=schemas.TestOut)
 def create_test(data: schemas.TestCreate, db: Session = Depends(get_db),
@@ -88,6 +93,30 @@ def create_test(data: schemas.TestCreate, db: Session = Depends(get_db),
     db.commit()
     return test
 
+@app.get("/admin/tests/{test_id}", response_model=schemas.TestDetail)
+def admin_get_test(test_id: int, db: Session = Depends(get_db), admin=Depends(auth.require_admin)):
+    test = db.query(models.Test).filter(models.Test.id == test_id).first()
+    if not test:
+        raise HTTPException(404, "Test not found")
+    return test
+
+@app.put("/admin/tests/{test_id}", response_model=schemas.TestOut)
+def update_test(test_id: int, data: schemas.TestCreate, db: Session = Depends(get_db),
+                admin=Depends(auth.require_admin)):
+    test = db.query(models.Test).filter(models.Test.id == test_id).first()
+    if not test:
+        raise HTTPException(404, "Test not found")
+    test.title = data.title
+    # Cascade delete-orphan в модели сам удалит старые вопросы при очистке списка
+    test.questions.clear()
+    db.flush()  # применяем удаление до добавления новых
+    for q in data.questions:
+        question = models.Question(test_id=test.id, **q.dict())
+        db.add(question)
+    db.commit()
+    db.refresh(test)
+    return test
+
 @app.delete("/admin/tests/{test_id}")
 def delete_test(test_id: int, db: Session = Depends(get_db), admin=Depends(auth.require_admin)):
     test = db.query(models.Test).filter(models.Test.id == test_id).first()
@@ -97,11 +126,46 @@ def delete_test(test_id: int, db: Session = Depends(get_db), admin=Depends(auth.
     db.commit()
     return {"ok": True}
 
-@app.get("/admin/results")
-def all_results(db: Session = Depends(get_db), admin=Depends(auth.require_admin)):
-    results = db.query(models.Result).all()
-    return [{"user_id": r.user_id, "test_id": r.test_id, "score": r.score} for r in results]
+# --- ADMIN: ПОЛЬЗОВАТЕЛИ ---
 
 @app.get("/admin/users", response_model=list[schemas.UserOut])
 def all_users(db: Session = Depends(get_db), admin=Depends(auth.require_admin)):
     return db.query(models.User).all()
+
+@app.put("/admin/users/{user_id}/role")
+def change_role(user_id: int, data: schemas.RoleUpdate, db: Session = Depends(get_db),
+                admin=Depends(auth.require_admin)):
+    user = db.query(models.User).filter(models.User.id == user_id).first()
+    if not user:
+        raise HTTPException(404, "User not found")
+    if data.role not in ["client", "admin"]:
+        raise HTTPException(400, "Role must be 'client' or 'admin'")
+    user.role = data.role
+    db.commit()
+    return {"ok": True, "username": user.username, "role": user.role}
+
+@app.delete("/admin/users/{user_id}")
+def delete_user(user_id: int, db: Session = Depends(get_db), admin=Depends(auth.require_admin)):
+    user = db.query(models.User).filter(models.User.id == user_id).first()
+    if not user:
+        raise HTTPException(404, "User not found")
+    db.query(models.Result).filter(models.Result.user_id == user_id).delete()
+    db.delete(user)
+    db.commit()
+    return {"ok": True}
+
+# --- ADMIN: РЕЗУЛЬТАТЫ ---
+
+@app.get("/admin/results")
+def all_results(db: Session = Depends(get_db), admin=Depends(auth.require_admin)):
+    results = db.query(models.Result).all()
+    return [{"id": r.id, "user_id": r.user_id, "test_id": r.test_id, "score": r.score} for r in results]
+
+@app.delete("/admin/results/{result_id}")
+def delete_result(result_id: int, db: Session = Depends(get_db), admin=Depends(auth.require_admin)):
+    result = db.query(models.Result).filter(models.Result.id == result_id).first()
+    if not result:
+        raise HTTPException(404, "Result not found")
+    db.delete(result)
+    db.commit()
+    return {"ok": True}

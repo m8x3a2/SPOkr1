@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from typing import List, Optional
+from typing import List
 
 class UserCreate(BaseModel):
     username: str
@@ -16,6 +16,9 @@ class Token(BaseModel):
     access_token: str
     token_type: str
 
+class RoleUpdate(BaseModel):
+    role: str
+
 class QuestionOut(BaseModel):
     id: int
     text: str
@@ -23,6 +26,8 @@ class QuestionOut(BaseModel):
     option_b: str
     option_c: str
     option_d: str
+    correct: str   # ✅ исправлено: поле correct теперь включено,
+                   # иначе при редактировании теста правильный ответ терялся
     class Config:
         from_attributes = True
 

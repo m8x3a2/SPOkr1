@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Boolean, ForeignKey
+from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
 from database import Base
 
@@ -7,14 +7,15 @@ class User(Base):
     id = Column(Integer, primary_key=True, index=True)
     username = Column(String, unique=True, index=True)
     password = Column(String)
-    role = Column(String, default="client")  # "client" or "admin"
-    results = relationship("Result", back_populates="user")
+    role = Column(String, default="client")  # "client" или "admin"
+    results = relationship("Result", back_populates="user", cascade="all, delete-orphan")
 
 class Test(Base):
     __tablename__ = "tests"
     id = Column(Integer, primary_key=True, index=True)
     title = Column(String)
-    questions = relationship("Question", back_populates="test")
+    # ✅ cascade="all, delete-orphan" — вопросы удаляются вместе с тестом автоматически
+    questions = relationship("Question", back_populates="test", cascade="all, delete-orphan")
 
 class Question(Base):
     __tablename__ = "questions"
@@ -25,7 +26,7 @@ class Question(Base):
     option_b = Column(String)
     option_c = Column(String)
     option_d = Column(String)
-    correct = Column(String)  # "a", "b", "c" or "d"
+    correct = Column(String)  # "a", "b", "c" или "d"
     test = relationship("Test", back_populates="questions")
 
 class Result(Base):
