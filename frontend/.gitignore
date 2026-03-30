@@ -1,0 +1,18 @@
+# Зависимости
+node_modules/
+
+# Сборка
+dist/
+build/
+
+# Переменные окружения
+.env
+.env.local
+.env.production
+
+# Логи
+npm-debug.log*
+yarn-debug.log*
+
+# Кэш Vite
+.vite/
