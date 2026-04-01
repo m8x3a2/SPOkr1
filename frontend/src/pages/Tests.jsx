@@ -116,6 +116,7 @@ export default function Tests({ API, token, user }) {
   const [activeTest, setActiveTest] = useState(null)
   const [answers, setAnswers] = useState({})
   const [result, setResult] = useState(null)
+  const [showReview, setShowReview] = useState(false)
   const [unanswered, setUnanswered] = useState([])
 
   const [myResults, setMyResults] = useState([])
@@ -177,7 +178,7 @@ export default function Tests({ API, token, user }) {
   const openTest = async (id) => {
     const res = await fetch(`${API}/tests/${id}`)
     const data = await res.json()
-    setActiveTest(data); setAnswers({}); setResult(null); setUnanswered([])
+    setActiveTest(data); setAnswers({}); setResult(null); setUnanswered([]); setShowReview(false)
   }
 
   const setAnswer = (questionId, optionId, type) => {
@@ -235,6 +236,18 @@ export default function Tests({ API, token, user }) {
   if (activeTest) {
     const pct = result ? Math.round(result.score / result.total * 100) : null
     const rs = result ? resultStyle(result.score, result.total) : null
+
+    // Проверяем правильность ответа на вопрос (для показа разбора)
+    const isQuestionCorrect = (q) => {
+      const correctIds = new Set(q.options.filter(o => o.is_correct).map(o => o.id))
+      if (q.question_type === "single") {
+        return correctIds.has(answers[q.id])
+      } else {
+        const us = answers[q.id] instanceof Set ? answers[q.id] : new Set()
+        return us.size === correctIds.size && [...us].every(id => correctIds.has(id))
+      }
+    }
+
     return (
       <div>
         <button style={{ ...S.btn, ...S.btnGray, marginBottom: 16 }} onClick={() => setActiveTest(null)}>← Назад</button>
@@ -251,7 +264,9 @@ export default function Tests({ API, token, user }) {
             ⚠ Ответьте на все вопросы перед отправкой (отмечены красной рамкой)
           </div>
         )}
-        {activeTest.questions.map((q, idx) => {
+
+        {/* Вопросы во время прохождения */}
+        {!result && activeTest.questions.map((q, idx) => {
           const isUnanswered = unanswered.includes(q.id)
           return (
             <div key={q.id} style={{ ...S.card, border: isUnanswered ? "2px solid #ef4444" : "1px solid #e0e0e0" }}>
@@ -263,14 +278,13 @@ export default function Tests({ API, token, user }) {
                   return (
                     <label key={opt.id} style={{
                       display: "block", padding: "8px 12px", marginBottom: 6, borderRadius: 6,
-                      cursor: result ? "default" : "pointer",
+                      cursor: "pointer",
                       background: selected ? "#ede9fe" : "#f9fafb",
                       border: selected ? "2px solid #4f46e5" : "2px solid transparent",
-                      opacity: result ? 0.85 : 1
                     }}>
                       <input type={q.question_type === "single" ? "radio" : "checkbox"}
                         name={`q${q.id}`} style={{ marginRight: 8 }} checked={selected}
-                        disabled={!!result} onChange={() => !result && setAnswer(q.id, opt.id, q.question_type)} />
+                        onChange={() => setAnswer(q.id, opt.id, q.question_type)} />
                       {opt.text}
                     </label>
                   )
@@ -279,16 +293,84 @@ export default function Tests({ API, token, user }) {
             </div>
           )
         })}
-        {result ? (
-          <div style={{ background: rs.bg, border: `2px solid ${rs.border}`, borderRadius: 10, padding: 20, textAlign: "center", marginTop: 8 }}>
-            <div style={{ fontSize: 36 }}>{rs.emoji}</div>
-            <div style={{ fontSize: 22, fontWeight: "bold", color: rs.text, marginTop: 4 }}>
-              {result.score} из {result.total} — {pct}%
+
+        {/* Результат */}
+        {result && (
+          <>
+            <div style={{ background: rs.bg, border: `2px solid ${rs.border}`, borderRadius: 10, padding: 20, textAlign: "center", marginBottom: 16 }}>
+              <div style={{ fontSize: 36 }}>{rs.emoji}</div>
+              <div style={{ fontSize: 22, fontWeight: "bold", color: rs.text, marginTop: 4 }}>
+                {result.score} из {result.total} — {pct}%
+              </div>
+              {result.guest && <div style={{ marginTop: 8, fontSize: 13, color: "#888" }}>Вы не авторизованы — результат не сохранён.</div>}
+              <div style={{ display: "flex", gap: 10, justifyContent: "center", marginTop: 14, flexWrap: "wrap" }}>
+                <button style={{ ...S.btn, ...S.btnGray }} onClick={() => setActiveTest(null)}>← К списку тестов</button>
+                <button
+                  style={{ ...S.btn, background: showReview ? "#6366f1" : "#e0e7ff", color: showReview ? "#fff" : "#4f46e5" }}
+                  onClick={() => setShowReview(r => !r)}
+                >
+                  {showReview ? "▲ Скрыть разбор" : "▼ Показать разбор"}
+                </button>
+              </div>
             </div>
-            {result.guest && <div style={{ marginTop: 8, fontSize: 13, color: "#888" }}>Вы не авторизованы — результат не сохранён.</div>}
-            <button style={{ ...S.btn, ...S.btnGray, marginTop: 14 }} onClick={() => setActiveTest(null)}>← К списку тестов</button>
-          </div>
-        ) : (
+
+            {/* Разбор ответов */}
+            {showReview && activeTest.questions.map((q, idx) => {
+              const correct = isQuestionCorrect(q)
+              const correctIds = new Set(q.options.filter(o => o.is_correct).map(o => o.id))
+              return (
+                <div key={q.id} style={{
+                  ...S.card,
+                  borderLeft: `4px solid ${correct ? "#22c55e" : "#ef4444"}`,
+                  marginBottom: 10
+                }}>
+                  <div style={{ display: "flex", alignItems: "flex-start", gap: 8, marginBottom: 8 }}>
+                    <span style={{ fontSize: 18, flexShrink: 0 }}>{correct ? "✅" : "❌"}</span>
+                    <b style={{ fontSize: 15 }}>{idx + 1}. {q.text}</b>
+                  </div>
+                  <div>
+                    {q.options.sort((a, b) => a.order - b.order).map(opt => {
+                      const userPicked = isOptionSelected(q.id, opt.id, q.question_type)
+                      const isCorrect = correctIds.has(opt.id)
+
+                      // Определяем цвет варианта
+                      let bg = "#f9fafb", border = "2px solid transparent", textColor = "#333"
+                      if (isCorrect) {
+                        bg = "#f0fdf4"; border = "2px solid #22c55e"; textColor = "#166534"
+                      } else if (userPicked && !isCorrect) {
+                        bg = "#fef2f2"; border = "2px solid #ef4444"; textColor = "#991b1b"
+                      }
+
+                      return (
+                        <div key={opt.id} style={{
+                          display: "flex", alignItems: "center", gap: 8,
+                          padding: "7px 12px", marginBottom: 5, borderRadius: 6,
+                          background: bg, border, color: textColor
+                        }}>
+                          <span style={{ width: 18, textAlign: "center", flexShrink: 0, fontSize: 14 }}>
+                            {isCorrect ? "✓" : (userPicked ? "✗" : "")}
+                          </span>
+                          <span style={{ flex: 1, fontSize: 14 }}>{opt.text}</span>
+                          {isCorrect && !userPicked && (
+                            <span style={{ fontSize: 12, color: "#16a34a", fontStyle: "italic" }}>правильный</span>
+                          )}
+                          {userPicked && !isCorrect && (
+                            <span style={{ fontSize: 12, color: "#dc2626", fontStyle: "italic" }}>ваш ответ</span>
+                          )}
+                          {userPicked && isCorrect && (
+                            <span style={{ fontSize: 12, color: "#16a34a", fontStyle: "italic" }}>ваш ответ ✓</span>
+                          )}
+                        </div>
+                      )
+                    })}
+                  </div>
+                </div>
+              )
+            })}
+          </>
+        )}
+
+        {!result && (
           <button style={{ ...S.btn, ...S.btnPrimary, width: "100%", padding: "10px", marginTop: 4 }} onClick={submit}>
             Отправить ответы
           </button>

@@ -252,6 +252,54 @@ export default function Admin({ API, token }) {
     loadTests(testsPage); flash("✅ Тест создан!")
   }
 
+  const deleteAllTests = async () => {
+    if (!confirm(`Удалить ВСЕ тесты? Это действие необратимо.`)) return
+    if (!confirm("Вы уверены? Все тесты будут удалены навсегда.")) return
+    const res = await fetch(`${API}/admin/tests-all`, { method: "DELETE", headers })
+    const d = await res.json()
+    loadTests(1); flash(`🗑 Удалено тестов: ${d.deleted}`)
+  }
+
+  const exportTests = async () => {
+    const res = await fetch(`${API}/admin/tests-export`, { headers })
+    const data = await res.json()
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" })
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement("a")
+    a.href = url
+    a.download = `tests_export_${new Date().toISOString().slice(0, 10)}.json`
+    a.click()
+    URL.revokeObjectURL(url)
+    flash(`✅ Экспортировано тестов: ${data.length}`)
+  }
+
+  const importRef = React.useRef()
+
+  const importTests = async (e) => {
+    const file = e.target.files[0]
+    if (!file) return
+    e.target.value = ""
+    let parsed
+    try { parsed = JSON.parse(await file.text()) } catch {
+      flash("❌ Ошибка: не удалось прочитать JSON файл"); return
+    }
+    if (!Array.isArray(parsed)) {
+      flash("❌ Ошибка: JSON должен содержать массив тестов"); return
+    }
+    const res = await fetch(`${API}/admin/tests-import?skip_duplicates=true`, {
+      method: "POST", headers, body: JSON.stringify(parsed)
+    })
+    if (!res.ok) {
+      const d = await res.json()
+      flash(`❌ ${d.detail || "Ошибка импорта"}`); return
+    }
+    const d = await res.json()
+    loadTests(1)
+    flash(`✅ Импортировано: ${d.imported}, пропущено (дубли): ${d.skipped}`)
+  }
+
+
+
   const startEdit = async (id) => {
     setFormError("")
     const res = await fetch(`${API}/admin/tests/${id}`, { headers })
@@ -323,13 +371,26 @@ export default function Admin({ API, token }) {
         {/* ===== ТЕСТЫ ===== */}
         {tab === "tests" && (
           <div>
-            <div style={{ ...S.row, marginBottom: 12 }}>
+            <div style={{ ...S.row, marginBottom: 12, flexWrap: "wrap", gap: 6 }}>
               <b>Тесты ({testsTotal})</b>
               <span style={{ flex: 1 }} />
               {!showCreate && !editingTest && (
-                <button style={{ ...S.btn, ...S.btnPrimary }} onClick={() => { setShowCreate(true); setFormError("") }}>
-                  + Создать тест
-                </button>
+                <>
+                  {/* Скрытый input для импорта */}
+                  <input type="file" accept=".json" style={{ display: "none" }} ref={importRef} onChange={importTests} />
+                  <button style={{ ...S.btn, background: "#0ea5e9", color: "#fff" }} onClick={() => importRef.current.click()} title="Импортировать тесты из JSON файла">
+                    📥 Импорт
+                  </button>
+                  <button style={{ ...S.btn, background: "#6366f1", color: "#fff" }} onClick={exportTests} title="Экспортировать все тесты в JSON файл">
+                    📤 Экспорт
+                  </button>
+                  <button style={{ ...S.btn, ...S.btnDanger }} onClick={deleteAllTests} title="Удалить все тесты">
+                    🗑 Удалить все
+                  </button>
+                  <button style={{ ...S.btn, ...S.btnPrimary }} onClick={() => { setShowCreate(true); setFormError("") }}>
+                    + Создать тест
+                  </button>
+                </>
               )}
             </div>
 

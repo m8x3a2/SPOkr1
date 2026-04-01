@@ -174,6 +174,19 @@ def _build_test_from_data(test: models.Test, data: schemas.TestCreate, db: Sessi
     db.flush()
 
 
+
+def _cleanup_orphan_tags(db: Session):
+    """Удалить теги, не привязанные ни к одному тесту."""
+    used_tag_ids = db.execute(
+        models.TestTag.__table__.select().with_only_columns(models.TestTag.__table__.c.tag_id)
+    ).scalars().all()
+    if used_tag_ids:
+        db.query(models.Tag).filter(models.Tag.id.notin_(used_tag_ids)).delete(synchronize_session=False)
+    else:
+        # Нет ни одной связи — удаляем все теги
+        db.query(models.Tag).delete(synchronize_session=False)
+
+
 # --- ADMIN: TESTS ---
 
 @app.post("/admin/tests", response_model=schemas.TestOut)
@@ -249,9 +262,83 @@ def delete_test(test_id: int, db: Session = Depends(get_db), admin=Depends(auth.
     test = db.query(models.Test).filter(models.Test.id == test_id).first()
     if not test:
         raise HTTPException(404, "Not found")
+    # Обнуляем test_id в results (снапшот названия сохранён, FK больше не нужен)
+    db.query(models.Result).filter(models.Result.test_id == test_id).update(
+        {models.Result.test_id: None}, synchronize_session=False
+    )
     db.delete(test)
+    db.flush()
+    _cleanup_orphan_tags(db)
     db.commit()
     return {"ok": True}
+
+
+@app.delete("/admin/tests-all")
+def delete_all_tests(db: Session = Depends(get_db), admin=Depends(auth.require_admin)):
+    """Удалить все тесты с соблюдением порядка FK."""
+    count = db.query(models.Test).count()
+    # 1. Обнуляем test_id в results (снапшот названия сохранён, FK не нужен)
+    db.query(models.Result).update({models.Result.test_id: None}, synchronize_session=False)
+    # 2. Удаляем дочерние таблицы в правильном порядке
+    db.query(models.QuestionOption).delete(synchronize_session=False)
+    db.query(models.Question).delete(synchronize_session=False)
+    db.execute(models.TestTag.__table__.delete())
+    db.query(models.Test).delete(synchronize_session=False)
+    # 3. Удаляем осиротевшие теги (не привязанные ни к одному тесту)
+    _cleanup_orphan_tags(db)
+    db.commit()
+    return {"ok": True, "deleted": count}
+
+
+@app.get("/admin/tests-export")
+def export_tests(db: Session = Depends(get_db), admin=Depends(auth.require_admin)):
+    """Экспорт всех тестов в JSON-структуру, пригодную для импорта."""
+    tests = db.query(models.Test).all()
+    result = []
+    for t in tests:
+        result.append({
+            "title": t.title,
+            "tags": [tag.name for tag in t.tags],
+            "questions": [
+                {
+                    "text": q.text,
+                    "question_type": q.question_type,
+                    "options": [
+                        {"text": o.text, "is_correct": o.is_correct, "order": o.order}
+                        for o in sorted(q.options, key=lambda x: x.order)
+                    ]
+                }
+                for q in t.questions
+            ]
+        })
+    return result
+
+
+@app.post("/admin/tests-import")
+def import_tests(
+    data: List[schemas.TestCreate],
+    skip_duplicates: bool = Query(True),
+    db: Session = Depends(get_db),
+    admin=Depends(auth.require_admin)
+):
+    """Импорт тестов из JSON. skip_duplicates=true — пропускать тесты с совпадающим названием."""
+    imported, skipped = 0, 0
+    for item in data:
+        existing = db.query(models.Test).filter(
+            models.Test.title.ilike(item.title.strip())).first()
+        if existing:
+            if skip_duplicates:
+                skipped += 1
+                continue
+            else:
+                raise HTTPException(400, f"Тест «{item.title}» уже существует")
+        test = models.Test(title=item.title.strip())
+        db.add(test)
+        db.flush()
+        _build_test_from_data(test, item, db)
+        imported += 1
+    db.commit()
+    return {"ok": True, "imported": imported, "skipped": skipped}
 
 
 # --- ADMIN: USERS ---

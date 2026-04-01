@@ -1,0 +1,1910 @@
+[
+  {
+    "title": "Основы алгебры",
+    "tags": ["математика", "алгебра", "7 класс"],
+    "questions": [
+      {
+        "text": "Решите уравнение: 3x = 12",
+        "question_type": "single",
+        "options": [
+          { "text": "x = 3", "is_correct": false, "order": 0 },
+          { "text": "x = 4", "is_correct": true, "order": 1 },
+          { "text": "x = 36", "is_correct": false, "order": 2 },
+          { "text": "x = 9", "is_correct": false, "order": 3 }
+        ]
+      },
+      {
+        "text": "Какие из чисел являются корнями уравнения x² - 5x + 6 = 0?",
+        "question_type": "multi",
+        "options": [
+          { "text": "2", "is_correct": true, "order": 0 },
+          { "text": "3", "is_correct": true, "order": 1 },
+          { "text": "1", "is_correct": false, "order": 2 },
+          { "text": "6", "is_correct": false, "order": 3 },
+          { "text": "0", "is_correct": false, "order": 4 }
+        ]
+      },
+      {
+        "text": "Упростите выражение: 2a + 3b - a + 2b",
+        "question_type": "single",
+        "options": [
+          { "text": "a + 5b", "is_correct": true, "order": 0 },
+          { "text": "3a + 5b", "is_correct": false, "order": 1 },
+          { "text": "a + b", "is_correct": false, "order": 2 },
+          { "text": "3a + b", "is_correct": false, "order": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "География России",
+    "tags": ["география", "россия", "8 класс"],
+    "questions": [
+      {
+        "text": "Какая река является самой длинной в Европе и протекает по территории России?",
+        "question_type": "single",
+        "options": [
+          { "text": "Обь", "is_correct": false, "order": 0 },
+          { "text": "Енисей", "is_correct": false, "order": 1 },
+          { "text": "Волга", "is_correct": true, "order": 2 },
+          { "text": "Лена", "is_correct": false, "order": 3 }
+        ]
+      },
+      {
+        "text": "Выберите города-миллионеры России:",
+        "question_type": "multi",
+        "options": [
+          { "text": "Москва", "is_correct": true, "order": 0 },
+          { "text": "Санкт-Петербург", "is_correct": true, "order": 1 },
+          { "text": "Новосибирск", "is_correct": true, "order": 2 },
+          { "text": "Суздаль", "is_correct": false, "order": 3 },
+          { "text": "Екатеринбург", "is_correct": true, "order": 4 },
+          { "text": "Торжок", "is_correct": false, "order": 5 }
+        ]
+      },
+      {
+        "text": "Какое озеро является самым глубоким в мире?",
+        "question_type": "single",
+        "options": [
+          { "text": "Ладожское", "is_correct": false, "order": 0 },
+          { "text": "Онежское", "is_correct": false, "order": 1 },
+          { "text": "Байкал", "is_correct": true, "order": 2 },
+          { "text": "Каспийское море", "is_correct": false, "order": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Английский язык: времена глаголов",
+    "tags": ["английский", "грамматика", "времена"],
+    "questions": [
+      {
+        "text": "Выберите правильную форму глагола: She ___ to school every day.",
+        "question_type": "single",
+        "options": [
+          { "text": "go", "is_correct": false, "order": 0 },
+          { "text": "goes", "is_correct": true, "order": 1 },
+          { "text": "going", "is_correct": false, "order": 2 },
+          { "text": "went", "is_correct": false, "order": 3 }
+        ]
+      },
+      {
+        "text": "Какие из следующих предложений используют Present Perfect?",
+        "question_type": "multi",
+        "options": [
+          { "text": "I have visited London.", "is_correct": true, "order": 0 },
+          { "text": "She is reading a book.", "is_correct": false, "order": 1 },
+          { "text": "They have finished the project.", "is_correct": true, "order": 2 },
+          { "text": "We went to the cinema.", "is_correct": false, "order": 3 },
+          { "text": "He has lived here for 10 years.", "is_correct": true, "order": 4 }
+        ]
+      },
+      {
+        "text": "Выберите правильный вариант: They ___ football when I came.",
+        "question_type": "single",
+        "options": [
+          { "text": "played", "is_correct": false, "order": 0 },
+          { "text": "were playing", "is_correct": true, "order": 1 },
+          { "text": "play", "is_correct": false, "order": 2 },
+          { "text": "have played", "is_correct": false, "order": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "История Древнего мира",
+    "tags": ["история", "древний мир", "5 класс"],
+    "questions": [
+      {
+        "text": "Кто был первым императором Рима?",
+        "question_type": "single",
+        "options": [
+          { "text": "Юлий Цезарь", "is_correct": false, "order": 0 },
+          { "text": "Октавиан Август", "is_correct": true, "order": 1 },
+          { "text": "Нерон", "is_correct": false, "order": 2 },
+          { "text": "Марк Антоний", "is_correct": false, "order": 3 }
+        ]
+      },
+      {
+        "text": "Какие сооружения были построены в Древнем Египте?",
+        "question_type": "multi",
+        "options": [
+          { "text": "Пирамиды Гизы", "is_correct": true, "order": 0 },
+          { "text": "Колизей", "is_correct": false, "order": 1 },
+          { "text": "Храмы Карнака", "is_correct": true, "order": 2 },
+          { "text": "Великая Китайская стена", "is_correct": false, "order": 3 },
+          { "text": "Сфинкс", "is_correct": true, "order": 4 }
+        ]
+      },
+      {
+        "text": "В каком году началась Троянская война (согласно легендам)?",
+        "question_type": "single",
+        "options": [
+          { "text": "1200 г. до н.э.", "is_correct": false, "order": 0 },
+          { "text": "1250 г. до н.э.", "is_correct": false, "order": 1 },
+          { "text": "1194 г. до н.э.", "is_correct": true, "order": 2 },
+          { "text": "1000 г. до н.э.", "is_correct": false, "order": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Биология: строение клетки",
+    "tags": ["биология", "клетка", "9 класс"],
+    "questions": [
+      {
+        "text": "Какой органоид отвечает за синтез белка в клетке?",
+        "question_type": "single",
+        "options": [
+          { "text": "Митохондрия", "is_correct": false, "order": 0 },
+          { "text": "Рибосома", "is_correct": true, "order": 1 },
+          { "text": "Ядро", "is_correct": false, "order": 2 },
+          { "text": "Лизосома", "is_correct": false, "order": 3 },
+          { "text": "Аппарат Гольджи", "is_correct": false, "order": 4 }
+        ]
+      },
+      {
+        "text": "Какие структуры характерны для растительной клетки?",
+        "question_type": "multi",
+        "options": [
+          { "text": "Клеточная стенка", "is_correct": true, "order": 0 },
+          { "text": "Хлоропласты", "is_correct": true, "order": 1 },
+          { "text": "Центриоли", "is_correct": false, "order": 2 },
+          { "text": "Вакуоли", "is_correct": true, "order": 3 },
+          { "text": "Лизосомы", "is_correct": false, "order": 4 }
+        ]
+      },
+      {
+        "text": "Как называется процесс поглощения клеткой твердых частиц?",
+        "question_type": "single",
+        "options": [
+          { "text": "Пиноцитоз", "is_correct": false, "order": 0 },
+          { "text": "Фагоцитоз", "is_correct": true, "order": 1 },
+          { "text": "Экзоцитоз", "is_correct": false, "order": 2 },
+          { "text": "Осмос", "is_correct": false, "order": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Физика: законы Ньютона",
+    "tags": ["физика", "механика", "7 класс"],
+    "questions": [
+      {
+        "text": "Какой закон Ньютона описывает инерцию?",
+        "question_type": "single",
+        "options": [
+          { "text": "Первый", "is_correct": true, "order": 0 },
+          { "text": "Второй", "is_correct": false, "order": 1 },
+          { "text": "Третий", "is_correct": false, "order": 2 },
+          { "text": "Закон всемирного тяготения", "is_correct": false, "order": 3 }
+        ]
+      },
+      {
+        "text": "Какие единицы измерения являются единицами силы?",
+        "question_type": "multi",
+        "options": [
+          { "text": "Ньютон", "is_correct": true, "order": 0 },
+          { "text": "Килограмм", "is_correct": false, "order": 1 },
+          { "text": "Джоуль", "is_correct": false, "order": 2 },
+          { "text": "Дина", "is_correct": true, "order": 3 },
+          { "text": "Паскаль", "is_correct": false, "order": 4 }
+        ]
+      },
+      {
+        "text": "Формула второго закона Ньютона:",
+        "question_type": "single",
+        "options": [
+          { "text": "F = ma", "is_correct": true, "order": 0 },
+          { "text": "F = mg", "is_correct": false, "order": 1 },
+          { "text": "p = mv", "is_correct": false, "order": 2 },
+          { "text": "E = mc²", "is_correct": false, "order": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Химия: периодическая система",
+    "tags": ["химия", "периодическая система", "8 класс"],
+    "questions": [
+      {
+        "text": "Какой элемент имеет атомный номер 6?",
+        "question_type": "single",
+        "options": [
+          { "text": "Кислород", "is_correct": false, "order": 0 },
+          { "text": "Углерод", "is_correct": true, "order": 1 },
+          { "text": "Азот", "is_correct": false, "order": 2 },
+          { "text": "Водород", "is_correct": false, "order": 3 }
+        ]
+      },
+      {
+        "text": "Какие из перечисленных элементов являются щелочными металлами?",
+        "question_type": "multi",
+        "options": [
+          { "text": "Натрий", "is_correct": true, "order": 0 },
+          { "text": "Калий", "is_correct": true, "order": 1 },
+          { "text": "Магний", "is_correct": false, "order": 2 },
+          { "text": "Литий", "is_correct": true, "order": 3 },
+          { "text": "Кальций", "is_correct": false, "order": 4 },
+          { "text": "Рубидий", "is_correct": true, "order": 5 }
+        ]
+      },
+      {
+        "text": "Кто создал периодическую систему химических элементов?",
+        "question_type": "single",
+        "options": [
+          { "text": "Ломоносов", "is_correct": false, "order": 0 },
+          { "text": "Менделеев", "is_correct": true, "order": 1 },
+          { "text": "Лавуазье", "is_correct": false, "order": 2 },
+          { "text": "Бор", "is_correct": false, "order": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Литература: русские писатели",
+    "tags": ["литература", "русская классика", "9 класс"],
+    "questions": [
+      {
+        "text": "Кто написал роман 'Война и мир'?",
+        "question_type": "single",
+        "options": [
+          { "text": "Достоевский", "is_correct": false, "order": 0 },
+          { "text": "Толстой", "is_correct": true, "order": 1 },
+          { "text": "Тургенев", "is_correct": false, "order": 2 },
+          { "text": "Чехов", "is_correct": false, "order": 3 }
+        ]
+      },
+      {
+        "text": "Какие произведения принадлежат А.С. Пушкину?",
+        "question_type": "multi",
+        "options": [
+          { "text": "Евгений Онегин", "is_correct": true, "order": 0 },
+          { "text": "Мертвые души", "is_correct": false, "order": 1 },
+          { "text": "Капитанская дочка", "is_correct": true, "order": 2 },
+          { "text": "Герой нашего времени", "is_correct": false, "order": 3 },
+          { "text": "Руслан и Людмила", "is_correct": true, "order": 4 }
+        ]
+      },
+      {
+        "text": "Как звали главного героя романа 'Отцы и дети'?",
+        "question_type": "single",
+        "options": [
+          { "text": "Базаров", "is_correct": true, "order": 0 },
+          { "text": "Раскольников", "is_correct": false, "order": 1 },
+          { "text": "Печорин", "is_correct": false, "order": 2 },
+          { "text": "Обломов", "is_correct": false, "order": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Информатика: основы алгоритмизации",
+    "tags": ["информатика", "алгоритмы", "8 класс"],
+    "questions": [
+      {
+        "text": "Какая структура алгоритма выполняется последовательно команда за командой?",
+        "question_type": "single",
+        "options": [
+          { "text": "Ветвление", "is_correct": false, "order": 0 },
+          { "text": "Цикл", "is_correct": false, "order": 1 },
+          { "text": "Линейная", "is_correct": true, "order": 2 },
+          { "text": "Рекурсивная", "is_correct": false, "order": 3 }
+        ]
+      },
+      {
+        "text": "Какие из перечисленных являются языками программирования?",
+        "question_type": "multi",
+        "options": [
+          { "text": "Python", "is_correct": true, "order": 0 },
+          { "text": "HTML", "is_correct": false, "order": 1 },
+          { "text": "Java", "is_correct": true, "order": 2 },
+          { "text": "CSS", "is_correct": false, "order": 3 },
+          { "text": "C++", "is_correct": true, "order": 4 }
+        ]
+      },
+      {
+        "text": "Что такое алгоритм?",
+        "question_type": "single",
+        "options": [
+          { "text": "Программа на языке высокого уровня", "is_correct": false, "order": 0 },
+          { "text": "Последовательность действий для решения задачи", "is_correct": true, "order": 1 },
+          { "text": "Схема устройства компьютера", "is_correct": false, "order": 2 },
+          { "text": "Язык программирования", "is_correct": false, "order": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Обществознание: права человека",
+    "tags": ["обществознание", "право", "9 класс"],
+    "questions": [
+      {
+        "text": "Какой документ является основным законом Российской Федерации?",
+        "question_type": "single",
+        "options": [
+          { "text": "Конституция РФ", "is_correct": true, "order": 0 },
+          { "text": "Декларация прав человека", "is_correct": false, "order": 1 },
+          { "text": "Гражданский кодекс", "is_correct": false, "order": 2 },
+          { "text": "Уголовный кодекс", "is_correct": false, "order": 3 }
+        ]
+      },
+      {
+        "text": "Какие права относятся к социальным?",
+        "question_type": "multi",
+        "options": [
+          { "text": "Право на образование", "is_correct": true, "order": 0 },
+          { "text": "Право на жизнь", "is_correct": false, "order": 1 },
+          { "text": "Право на медицинскую помощь", "is_correct": true, "order": 2 },
+          { "text": "Право на свободу слова", "is_correct": false, "order": 3 },
+          { "text": "Право на пенсионное обеспечение", "is_correct": true, "order": 4 }
+        ]
+      },
+      {
+        "text": "С какого возраста гражданин РФ может самостоятельно осуществлять свои права в полном объеме?",
+        "question_type": "single",
+        "options": [
+          { "text": "14 лет", "is_correct": false, "order": 0 },
+          { "text": "16 лет", "is_correct": false, "order": 1 },
+          { "text": "18 лет", "is_correct": true, "order": 2 },
+          { "text": "21 год", "is_correct": false, "order": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Геометрия: треугольники",
+    "tags": ["геометрия", "треугольники", "7 класс"],
+    "questions": [
+      {
+        "text": "Чему равна сумма углов треугольника?",
+        "question_type": "single",
+        "options": [
+          { "text": "90°", "is_correct": false, "order": 0 },
+          { "text": "180°", "is_correct": true, "order": 1 },
+          { "text": "270°", "is_correct": false, "order": 2 },
+          { "text": "360°", "is_correct": false, "order": 3 }
+        ]
+      },
+      {
+        "text": "Какие треугольники являются равнобедренными?",
+        "question_type": "multi",
+        "options": [
+          { "text": "Две стороны равны", "is_correct": true, "order": 0 },
+          { "text": "Все стороны равны", "is_correct": true, "order": 1 },
+          { "text": "Один угол 90°", "is_correct": false, "order": 2 },
+          { "text": "Углы при основании равны", "is_correct": true, "order": 3 },
+          { "text": "Один угол 60°", "is_correct": false, "order": 4 }
+        ]
+      },
+      {
+        "text": "Как называется треугольник со сторонами 3, 4, 5?",
+        "question_type": "single",
+        "options": [
+          { "text": "Остроугольный", "is_correct": false, "order": 0 },
+          { "text": "Прямоугольный", "is_correct": true, "order": 1 },
+          { "text": "Тупоугольный", "is_correct": false, "order": 2 },
+          { "text": "Равносторонний", "is_correct": false, "order": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Экология: охрана природы",
+    "tags": ["экология", "природа", "10 класс"],
+    "questions": [
+      {
+        "text": "Что такое биосфера?",
+        "question_type": "single",
+        "options": [
+          { "text": "Атмосфера Земли", "is_correct": false, "order": 0 },
+          { "text": "Оболочка Земли, заселенная живыми организмами", "is_correct": true, "order": 1 },
+          { "text": "Водная оболочка Земли", "is_correct": false, "order": 2 },
+          { "text": "Твердая оболочка Земли", "is_correct": false, "order": 3 }
+        ]
+      },
+      {
+        "text": "Какие из перечисленных действий помогают сохранить окружающую среду?",
+        "question_type": "multi",
+        "options": [
+          { "text": "Сортировка мусора", "is_correct": true, "order": 0 },
+          { "text": "Использование многоразовых сумок", "is_correct": true, "order": 1 },
+          { "text": "Сжигание пластика", "is_correct": false, "order": 2 },
+          { "text": "Посадка деревьев", "is_correct": true, "order": 3 },
+          { "text": "Экономия воды", "is_correct": true, "order": 4 }
+        ]
+      },
+      {
+        "text": "Как называется глобальное потепление климата?",
+        "question_type": "single",
+        "options": [
+          { "text": "Парниковый эффект", "is_correct": true, "order": 0 },
+          { "text": "Озоновые дыры", "is_correct": false, "order": 1 },
+          { "text": "Кислотные дожди", "is_correct": false, "order": 2 },
+          { "text": "Смог", "is_correct": false, "order": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Астрономия: планеты",
+    "tags": ["астрономия", "планеты", "10 класс"],
+    "questions": [
+      {
+        "text": "Какая планета является самой большой в Солнечной системе?",
+        "question_type": "single",
+        "options": [
+          { "text": "Сатурн", "is_correct": false, "order": 0 },
+          { "text": "Юпитер", "is_correct": true, "order": 1 },
+          { "text": "Нептун", "is_correct": false, "order": 2 },
+          { "text": "Уран", "is_correct": false, "order": 3 }
+        ]
+      },
+      {
+        "text": "Какие планеты относятся к планетам-гигантам?",
+        "question_type": "multi",
+        "options": [
+          { "text": "Юпитер", "is_correct": true, "order": 0 },
+          { "text": "Сатурн", "is_correct": true, "order": 1 },
+          { "text": "Уран", "is_correct": true, "order": 2 },
+          { "text": "Нептун", "is_correct": true, "order": 3 },
+          { "text": "Марс", "is_correct": false, "order": 4 },
+          { "text": "Земля", "is_correct": false, "order": 5 }
+        ]
+      },
+      {
+        "text": "Сколько планет в Солнечной системе?",
+        "question_type": "single",
+        "options": [
+          { "text": "7", "is_correct": false, "order": 0 },
+          { "text": "8", "is_correct": true, "order": 1 },
+          { "text": "9", "is_correct": false, "order": 2 },
+          { "text": "10", "is_correct": false, "order": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Экономика: основы",
+    "tags": ["экономика", "10 класс"],
+    "questions": [
+      {
+        "text": "Что такое инфляция?",
+        "question_type": "single",
+        "options": [
+          { "text": "Рост безработицы", "is_correct": false, "order": 0 },
+          { "text": "Обесценивание денег, рост цен", "is_correct": true, "order": 1 },
+          { "text": "Падение курса валюты", "is_correct": false, "order": 2 },
+          { "text": "Увеличение налогов", "is_correct": false, "order": 3 }
+        ]
+      },
+      {
+        "text": "Какие факторы производства существуют?",
+        "question_type": "multi",
+        "options": [
+          { "text": "Земля", "is_correct": true, "order": 0 },
+          { "text": "Труд", "is_correct": true, "order": 1 },
+          { "text": "Капитал", "is_correct": true, "order": 2 },
+          { "text": "Инфляция", "is_correct": false, "order": 3 },
+          { "text": "Предпринимательские способности", "is_correct": true, "order": 4 }
+        ]
+      },
+      {
+        "text": "Как называется прямой обмен товара на товар без денег?",
+        "question_type": "single",
+        "options": [
+          { "text": "Торговля", "is_correct": false, "order": 0 },
+          { "text": "Бартер", "is_correct": true, "order": 1 },
+          { "text": "Купля-продажа", "is_correct": false, "order": 2 },
+          { "text": "Кредит", "is_correct": false, "order": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Музыка: классические композиторы",
+    "tags": ["музыка", "классика", "7 класс"],
+    "questions": [
+      {
+        "text": "Кто написал 'Лунную сонату'?",
+        "question_type": "single",
+        "options": [
+          { "text": "Моцарт", "is_correct": false, "order": 0 },
+          { "text": "Бетховен", "is_correct": true, "order": 1 },
+          { "text": "Бах", "is_correct": false, "order": 2 },
+          { "text": "Чайковский", "is_correct": false, "order": 3 }
+        ]
+      },
+      {
+        "text": "Какие произведения написал П.И. Чайковский?",
+        "question_type": "multi",
+        "options": [
+          { "text": "Лебединое озеро", "is_correct": true, "order": 0 },
+          { "text": "Щелкунчик", "is_correct": true, "order": 1 },
+          { "text": "Волшебная флейта", "is_correct": false, "order": 2 },
+          { "text": "Евгений Онегин (опера)", "is_correct": true, "order": 3 },
+          { "text": "Кармен", "is_correct": false, "order": 4 }
+        ]
+      },
+      {
+        "text": "В какой стране родился Вольфганг Амадей Моцарт?",
+        "question_type": "single",
+        "options": [
+          { "text": "Германия", "is_correct": false, "order": 0 },
+          { "text": "Австрия", "is_correct": true, "order": 1 },
+          { "text": "Франция", "is_correct": false, "order": 2 },
+          { "text": "Италия", "is_correct": false, "order": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Спорт: Олимпийские игры",
+    "tags": ["спорт", "олимпиада", "8 класс"],
+    "questions": [
+      {
+        "text": "Где состоялись первые Олимпийские игры древности?",
+        "question_type": "single",
+        "options": [
+          { "text": "Афины", "is_correct": false, "order": 0 },
+          { "text": "Олимпия", "is_correct": true, "order": 1 },
+          { "text": "Рим", "is_correct": false, "order": 2 },
+          { "text": "Спарта", "is_correct": false, "order": 3 }
+        ]
+      },
+      {
+        "text": "Какие виды спорта входят в программу летних Олимпийских игр?",
+        "question_type": "multi",
+        "options": [
+          { "text": "Плавание", "is_correct": true, "order": 0 },
+          { "text": "Лыжные гонки", "is_correct": false, "order": 1 },
+          { "text": "Футбол", "is_correct": true, "order": 2 },
+          { "text": "Биатлон", "is_correct": false, "order": 3 },
+          { "text": "Гимнастика", "is_correct": true, "order": 4 }
+        ]
+      },
+      {
+        "text": "Как часто проводятся Олимпийские игры?",
+        "question_type": "single",
+        "options": [
+          { "text": "Каждый год", "is_correct": false, "order": 0 },
+          { "text": "Раз в 2 года", "is_correct": false, "order": 1 },
+          { "text": "Раз в 4 года", "is_correct": true, "order": 2 },
+          { "text": "Раз в 6 лет", "is_correct": false, "order": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Психология: эмоции",
+    "tags": ["психология", "эмоции", "11 класс"],
+    "questions": [
+      {
+        "text": "Кто основал психоанализ?",
+        "question_type": "single",
+        "options": [
+          { "text": "Юнг", "is_correct": false, "order": 0 },
+          { "text": "Фрейд", "is_correct": true, "order": 1 },
+          { "text": "Павлов", "is_correct": false, "order": 2 },
+          { "text": "Выготский", "is_correct": false, "order": 3 }
+        ]
+      },
+      {
+        "text": "Какие эмоции считаются базовыми (по П. Экману)?",
+        "question_type": "multi",
+        "options": [
+          { "text": "Радость", "is_correct": true, "order": 0 },
+          { "text": "Грусть", "is_correct": true, "order": 1 },
+          { "text": "Стыд", "is_correct": false, "order": 2 },
+          { "text": "Гнев", "is_correct": true, "order": 3 },
+          { "text": "Страх", "is_correct": true, "order": 4 },
+          { "text": "Удивление", "is_correct": true, "order": 5 },
+          { "text": "Отвращение", "is_correct": true, "order": 6 }
+        ]
+      },
+      {
+        "text": "Что такое стресс?",
+        "question_type": "single",
+        "options": [
+          { "text": "Реакция организма на неожиданную ситуацию", "is_correct": true, "order": 0 },
+          { "text": "Заболевание нервной системы", "is_correct": false, "order": 1 },
+          { "text": "Состояние покоя", "is_correct": false, "order": 2 },
+          { "text": "Форма обучения", "is_correct": false, "order": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Искусство: живопись",
+    "tags": ["искусство", "живопись", "8 класс"],
+    "questions": [
+      {
+        "text": "Кто написал картину 'Мона Лиза'?",
+        "question_type": "single",
+        "options": [
+          { "text": "Микеланджело", "is_correct": false, "order": 0 },
+          { "text": "Рафаэль", "is_correct": false, "order": 1 },
+          { "text": "Да Винчи", "is_correct": true, "order": 2 },
+          { "text": "Ван Гог", "is_correct": false, "order": 3 }
+        ]
+      },
+      {
+        "text": "Какие художники принадлежат к эпохе Возрождения?",
+        "question_type": "multi",
+        "options": [
+          { "text": "Леонардо да Винчи", "is_correct": true, "order": 0 },
+          { "text": "Рафаэль", "is_correct": true, "order": 1 },
+          { "text": "Пикассо", "is_correct": false, "order": 2 },
+          { "text": "Микеланджело", "is_correct": true, "order": 3 },
+          { "text": "Дали", "is_correct": false, "order": 4 },
+          { "text": "Тициан", "is_correct": true, "order": 5 }
+        ]
+      },
+      {
+        "text": "Какая техника живописи использует водяные краски?",
+        "question_type": "single",
+        "options": [
+          { "text": "Масло", "is_correct": false, "order": 0 },
+          { "text": "Акварель", "is_correct": true, "order": 1 },
+          { "text": "Пастель", "is_correct": false, "order": 2 },
+          { "text": "Темпера", "is_correct": false, "order": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Технология: материаловедение",
+    "tags": ["технология", "материалы", "7 класс"],
+    "questions": [
+      {
+        "text": "Какой металл является самым легким?",
+        "question_type": "single",
+        "options": [
+          { "text": "Алюминий", "is_correct": false, "order": 0 },
+          { "text": "Литий", "is_correct": true, "order": 1 },
+          { "text": "Магний", "is_correct": false, "order": 2 },
+          { "text": "Титан", "is_correct": false, "order": 3 }
+        ]
+      },
+      {
+        "text": "Какие материалы относятся к природным?",
+        "question_type": "multi",
+        "options": [
+          { "text": "Древесина", "is_correct": true, "order": 0 },
+          { "text": "Пластик", "is_correct": false, "order": 1 },
+          { "text": "Хлопок", "is_correct": true, "order": 2 },
+          { "text": "Стекло", "is_correct": false, "order": 3 },
+          { "text": "Шерсть", "is_correct": true, "order": 4 },
+          { "text": "Резина (натуральная)", "is_correct": true, "order": 5 }
+        ]
+      },
+      {
+        "text": "Как называется процесс придания металлу формы путем ударов?",
+        "question_type": "single",
+        "options": [
+          { "text": "Литье", "is_correct": false, "order": 0 },
+          { "text": "Ковка", "is_correct": true, "order": 1 },
+          { "text": "Сварка", "is_correct": false, "order": 2 },
+          { "text": "Штамповка", "is_correct": false, "order": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Кулинария: основы",
+    "tags": ["кулинария", "технология", "6 класс"],
+    "questions": [
+      {
+        "text": "Что такое карвинг?",
+        "question_type": "single",
+        "options": [
+          { "text": "Способ жарки", "is_correct": false, "order": 0 },
+          { "text": "Художественная резка овощей и фруктов", "is_correct": true, "order": 1 },
+          { "text": "Вид теста", "is_correct": false, "order": 2 },
+          { "text": "Способ консервации", "is_correct": false, "order": 3 }
+        ]
+      },
+      {
+        "text": "Какие продукты являются источниками белка?",
+        "question_type": "multi",
+        "options": [
+          { "text": "Мясо", "is_correct": true, "order": 0 },
+          { "text": "Рыба", "is_correct": true, "order": 1 },
+          { "text": "Макароны", "is_correct": false, "order": 2 },
+          { "text": "Яйца", "is_correct": true, "order": 3 },
+          { "text": "Масло", "is_correct": false, "order": 4 },
+          { "text": "Бобовые", "is_correct": true, "order": 5 }
+        ]
+      },
+      {
+        "text": "Какой способ тепловой обработки происходит в кипящей воде?",
+        "question_type": "single",
+        "options": [
+          { "text": "Жарка", "is_correct": false, "order": 0 },
+          { "text": "Варка", "is_correct": true, "order": 1 },
+          { "text": "Тушение", "is_correct": false, "order": 2 },
+          { "text": "Запекание", "is_correct": false, "order": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Медицина: первая помощь",
+    "tags": ["медицина", "ОБЖ", "9 класс"],
+    "questions": [
+      {
+        "text": "Что нужно сделать при артериальном кровотечении в первую очередь?",
+        "question_type": "single",
+        "options": [
+          { "text": "Наложить жгут выше раны", "is_correct": true, "order": 0 },
+          { "text": "Наложить давящую повязку", "is_correct": false, "order": 1 },
+          { "text": "Обработать рану йодом", "is_correct": false, "order": 2 },
+          { "text": "Вызвать врача", "is_correct": false, "order": 3 }
+        ]
+      },
+      {
+        "text": "Какие признаки характерны для теплового удара?",
+        "question_type": "multi",
+        "options": [
+          { "text": "Головная боль", "is_correct": true, "order": 0 },
+          { "text": "Покраснение кожи", "is_correct": true, "order": 1 },
+          { "text": "Озноб", "is_correct": false, "order": 2 },
+          { "text": "Тошнота", "is_correct": true, "order": 3 },
+          { "text": "Потеря сознания", "is_correct": true, "order": 4 }
+        ]
+      },
+      {
+        "text": "Какое число ударов в минуту при непрямом массаже сердца?",
+        "question_type": "single",
+        "options": [
+          { "text": "60-80", "is_correct": false, "order": 0 },
+          { "text": "100-120", "is_correct": true, "order": 1 },
+          { "text": "140-160", "is_correct": false, "order": 2 },
+          { "text": "30-50", "is_correct": false, "order": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Логика: задачи",
+    "tags": ["логика", "мышление"],
+    "questions": [
+      {
+        "text": "Продолжите ряд: 2, 4, 6, 8, ...",
+        "question_type": "single",
+        "options": [
+          { "text": "9", "is_correct": false, "order": 0 },
+          { "text": "10", "is_correct": true, "order": 1 },
+          { "text": "11", "is_correct": false, "order": 2 },
+          { "text": "12", "is_correct": false, "order": 3 }
+        ]
+      },
+      {
+        "text": "Какие числа являются простыми?",
+        "question_type": "multi",
+        "options": [
+          { "text": "2", "is_correct": true, "order": 0 },
+          { "text": "3", "is_correct": true, "order": 1 },
+          { "text": "4", "is_correct": false, "order": 2 },
+          { "text": "5", "is_correct": true, "order": 3 },
+          { "text": "6", "is_correct": false, "order": 4 },
+          { "text": "7", "is_correct": true, "order": 5 }
+        ]
+      },
+      {
+        "text": "У Маши 5 яблок, а у Миши на 3 больше. Сколько яблок у Миши?",
+        "question_type": "single",
+        "options": [
+          { "text": "5", "is_correct": false, "order": 0 },
+          { "text": "8", "is_correct": true, "order": 1 },
+          { "text": "3", "is_correct": false, "order": 2 },
+          { "text": "2", "is_correct": false, "order": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Философия: античность",
+    "tags": ["философия", "античность", "10 класс"],
+    "questions": [
+      {
+        "text": "Кто был учителем Платона?",
+        "question_type": "single",
+        "options": [
+          { "text": "Аристотель", "is_correct": false, "order": 0 },
+          { "text": "Сократ", "is_correct": true, "order": 1 },
+          { "text": "Демокрит", "is_correct": false, "order": 2 },
+          { "text": "Пифагор", "is_correct": false, "order": 3 }
+        ]
+      },
+      {
+        "text": "Какие философы относятся к досократикам?",
+        "question_type": "multi",
+        "options": [
+          { "text": "Фалес", "is_correct": true, "order": 0 },
+          { "text": "Анаксимен", "is_correct": true, "order": 1 },
+          { "text": "Сократ", "is_correct": false, "order": 2 },
+          { "text": "Гераклит", "is_correct": true, "order": 3 },
+          { "text": "Парменид", "is_correct": true, "order": 4 }
+        ]
+      },
+      {
+        "text": "Какое выражение принадлежит Декарту?",
+        "question_type": "single",
+        "options": [
+          { "text": "Познай самого себя", "is_correct": false, "order": 0 },
+          { "text": "Мыслю, следовательно, существую", "is_correct": true, "order": 1 },
+          { "text": "Человек — мера всех вещей", "is_correct": false, "order": 2 },
+          { "text": "Знание — сила", "is_correct": false, "order": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Русский язык: орфография",
+    "tags": ["русский язык", "орфография", "7 класс"],
+    "questions": [
+      {
+        "text": "В каком слове пишется буква 'е'?",
+        "question_type": "single",
+        "options": [
+          { "text": "ц...рк", "is_correct": true, "order": 0 },
+          { "text": "ц...ган", "is_correct": false, "order": 1 },
+          { "text": "ц...пленок", "is_correct": false, "order": 2 },
+          { "text": "ц...почка", "is_correct": false, "order": 3 }
+        ]
+      },
+      {
+        "text": "В каких словах после шипящих пишется 'ё'?",
+        "question_type": "multi",
+        "options": [
+          { "text": "ш...лк", "is_correct": true, "order": 0 },
+          { "text": "ч...рный", "is_correct": true, "order": 1 },
+          { "text": "ж...лудь", "is_correct": true, "order": 2 },
+          { "text": "ш...рох", "is_correct": false, "order": 3 },
+          { "text": "капюш...н", "is_correct": false, "order": 4 }
+        ]
+      },
+      {
+        "text": "Как правильно:",
+        "question_type": "single",
+        "options": [
+          { "text": "пошли в лес", "is_correct": true, "order": 0 },
+          { "text": "пошли влес", "is_correct": false, "order": 1 },
+          { "text": "пошли влез", "is_correct": false, "order": 2 },
+          { "text": "пашли в лес", "is_correct": false, "order": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Мифология: Древняя Греция",
+    "tags": ["мифология", "древняя греция", "5 класс"],
+    "questions": [
+      {
+        "text": "Кто был верховным богом на Олимпе?",
+        "question_type": "single",
+        "options": [
+          { "text": "Аид", "is_correct": false, "order": 0 },
+          { "text": "Посейдон", "is_correct": false, "order": 1 },
+          { "text": "Зевс", "is_correct": true, "order": 2 },
+          { "text": "Аполлон", "is_correct": false, "order": 3 }
+        ]
+      },
+      {
+        "text": "Какие подвиги совершил Геракл?",
+        "question_type": "multi",
+        "options": [
+          { "text": "Немейский лев", "is_correct": true, "order": 0 },
+          { "text": "Лернейская гидра", "is_correct": true, "order": 1 },
+          { "text": "Похищение Елены", "is_correct": false, "order": 2 },
+          { "text": "Очистка Авгиевых конюшен", "is_correct": true, "order": 3 },
+          { "text": "Яблоки Гесперид", "is_correct": true, "order": 4 }
+        ]
+      },
+      {
+        "text": "Кто подарил людям огонь?",
+        "question_type": "single",
+        "options": [
+          { "text": "Гермес", "is_correct": false, "order": 0 },
+          { "text": "Прометей", "is_correct": true, "order": 1 },
+          { "text": "Гефест", "is_correct": false, "order": 2 },
+          { "text": "Дионис", "is_correct": false, "order": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Химия: органическая",
+    "tags": ["химия", "органика", "10 класс"],
+    "questions": [
+      {
+        "text": "Какая формула у метана?",
+        "question_type": "single",
+        "options": [
+          { "text": "C2H6", "is_correct": false, "order": 0 },
+          { "text": "CH4", "is_correct": true, "order": 1 },
+          { "text": "C3H8", "is_correct": false, "order": 2 },
+          { "text": "C4H10", "is_correct": false, "order": 3 }
+        ]
+      },
+      {
+        "text": "Какие вещества являются углеводами?",
+        "question_type": "multi",
+        "options": [
+          { "text": "Глюкоза", "is_correct": true, "order": 0 },
+          { "text": "Сахароза", "is_correct": true, "order": 1 },
+          { "text": "Белки", "is_correct": false, "order": 2 },
+          { "text": "Крахмал", "is_correct": true, "order": 3 },
+          { "text": "Целлюлоза", "is_correct": true, "order": 4 },
+          { "text": "Жиры", "is_correct": false, "order": 5 }
+        ]
+      },
+      {
+        "text": "Какая функциональная группа у спиртов?",
+        "question_type": "single",
+        "options": [
+          { "text": "-COOH", "is_correct": false, "order": 0 },
+          { "text": "-OH", "is_correct": true, "order": 1 },
+          { "text": "-NH2", "is_correct": false, "order": 2 },
+          { "text": "-CHO", "is_correct": false, "order": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Физика: оптика",
+    "tags": ["физика", "оптика", "8 класс"],
+    "questions": [
+      {
+        "text": "Как называется явление преломления света?",
+        "question_type": "single",
+        "options": [
+          { "text": "Дифракция", "is_correct": false, "order": 0 },
+          { "text": "Интерференция", "is_correct": false, "order": 1 },
+          { "text": "Рефракция", "is_correct": true, "order": 2 },
+          { "text": "Дисперсия", "is_correct": false, "order": 3 }
+        ]
+      },
+      {
+        "text": "Какие линзы собирают свет?",
+        "question_type": "multi",
+        "options": [
+          { "text": "Двояковыпуклые", "is_correct": true, "order": 0 },
+          { "text": "Плосковыпуклые", "is_correct": true, "order": 1 },
+          { "text": "Двояковогнутые", "is_correct": false, "order": 2 },
+          { "text": "Плосковогнутые", "is_correct": false, "order": 3 },
+          { "text": "Выпукло-вогнутые (мениски)", "is_correct": true, "order": 4 }
+        ]
+      },
+      {
+        "text": "Какой цвет имеет самая длинная волна видимого спектра?",
+        "question_type": "single",
+        "options": [
+          { "text": "Фиолетовый", "is_correct": false, "order": 0 },
+          { "text": "Синий", "is_correct": false, "order": 1 },
+          { "text": "Красный", "is_correct": true, "order": 2 },
+          { "text": "Зеленый", "is_correct": false, "order": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Биология: генетика",
+    "tags": ["биология", "генетика", "10 класс"],
+    "questions": [
+      {
+        "text": "Кто считается основоположником генетики?",
+        "question_type": "single",
+        "options": [
+          { "text": "Ватсон", "is_correct": false, "order": 0 },
+          { "text": "Мендель", "is_correct": true, "order": 1 },
+          { "text": "Дарвин", "is_correct": false, "order": 2 },
+          { "text": "Морган", "is_correct": false, "order": 3 }
+        ]
+      },
+      {
+        "text": "Какие признаки наследуются по доминантному типу?",
+        "question_type": "multi",
+        "options": [
+          { "text": "Карие глаза", "is_correct": true, "order": 0 },
+          { "text": "Голубые глаза", "is_correct": false, "order": 1 },
+          { "text": "Веснушки", "is_correct": true, "order": 2 },
+          { "text": "Курчавые волосы", "is_correct": true, "order": 3 },
+          { "text": "Прямые волосы", "is_correct": false, "order": 4 }
+        ]
+      },
+      {
+        "text": "Что такое генотип?",
+        "question_type": "single",
+        "options": [
+          { "text": "Совокупность внешних признаков", "is_correct": false, "order": 0 },
+          { "text": "Совокупность генов организма", "is_correct": true, "order": 1 },
+          { "text": "Изменение генов", "is_correct": false, "order": 2 },
+          { "text": "Структура ДНК", "is_correct": false, "order": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "История России: 19 век",
+    "tags": ["история", "россия", "8 класс"],
+    "questions": [
+      {
+        "text": "В каком году произошло восстание декабристов?",
+        "question_type": "single",
+        "options": [
+          { "text": "1812", "is_correct": false, "order": 0 },
+          { "text": "1825", "is_correct": true, "order": 1 },
+          { "text": "1861", "is_correct": false, "order": 2 },
+          { "text": "1905", "is_correct": false, "order": 3 }
+        ]
+      },
+      {
+        "text": "Какие реформы провел Александр II?",
+        "question_type": "multi",
+        "options": [
+          { "text": "Отмена крепостного права", "is_correct": true, "order": 0 },
+          { "text": "Судебная реформа", "is_correct": true, "order": 1 },
+          { "text": "Военная реформа", "is_correct": true, "order": 2 },
+          { "text": "Учреждение министерств", "is_correct": false, "order": 3 },
+          { "text": "Земская реформа", "is_correct": true, "order": 4 }
+        ]
+      },
+      {
+        "text": "Кто был главнокомандующим в Отечественной войне 1812 года?",
+        "question_type": "single",
+        "options": [
+          { "text": "Багратион", "is_correct": false, "order": 0 },
+          { "text": "Кутузов", "is_correct": true, "order": 1 },
+          { "text": "Барклай де Толли", "is_correct": false, "order": 2 },
+          { "text": "Суворов", "is_correct": false, "order": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Английский язык: лексика",
+    "tags": ["английский", "лексика", "5 класс"],
+    "questions": [
+      {
+        "text": "Как переводится слово 'apple'?",
+        "question_type": "single",
+        "options": [
+          { "text": "Груша", "is_correct": false, "order": 0 },
+          { "text": "Яблоко", "is_correct": true, "order": 1 },
+          { "text": "Апельсин", "is_correct": false, "order": 2 },
+          { "text": "Банан", "is_correct": false, "order": 3 }
+        ]
+      },
+      {
+        "text": "Какие слова обозначают профессии?",
+        "question_type": "multi",
+        "options": [
+          { "text": "Teacher", "is_correct": true, "order": 0 },
+          { "text": "Doctor", "is_correct": true, "order": 1 },
+          { "text": "Happy", "is_correct": false, "order": 2 },
+          { "text": "Engineer", "is_correct": true, "order": 3 },
+          { "text": "Big", "is_correct": false, "order": 4 },
+          { "text": "Driver", "is_correct": true, "order": 5 }
+        ]
+      },
+      {
+        "text": "Выберите правильный артикль: ___ sun",
+        "question_type": "single",
+        "options": [
+          { "text": "a", "is_correct": false, "order": 0 },
+          { "text": "an", "is_correct": false, "order": 1 },
+          { "text": "the", "is_correct": true, "order": 2 },
+          { "text": "-", "is_correct": false, "order": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "География: материки",
+    "tags": ["география", "материки", "7 класс"],
+    "questions": [
+      {
+        "text": "Какой материк является самым большим?",
+        "question_type": "single",
+        "options": [
+          { "text": "Африка", "is_correct": false, "order": 0 },
+          { "text": "Евразия", "is_correct": true, "order": 1 },
+          { "text": "Северная Америка", "is_correct": false, "order": 2 },
+          { "text": "Австралия", "is_correct": false, "order": 3 }
+        ]
+      },
+      {
+        "text": "Какие материки омываются Тихим океаном?",
+        "question_type": "multi",
+        "options": [
+          { "text": "Евразия", "is_correct": true, "order": 0 },
+          { "text": "Австралия", "is_correct": true, "order": 1 },
+          { "text": "Африка", "is_correct": false, "order": 2 },
+          { "text": "Северная Америка", "is_correct": true, "order": 3 },
+          { "text": "Южная Америка", "is_correct": true, "order": 4 },
+          { "text": "Антарктида", "is_correct": true, "order": 5 }
+        ]
+      },
+      {
+        "text": "Какая страна занимает целый материк?",
+        "question_type": "single",
+        "options": [
+          { "text": "США", "is_correct": false, "order": 0 },
+          { "text": "Россия", "is_correct": false, "order": 1 },
+          { "text": "Австралия", "is_correct": true, "order": 2 },
+          { "text": "Бразилия", "is_correct": false, "order": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Литература: зарубежная",
+    "tags": ["литература", "зарубежная", "8 класс"],
+    "questions": [
+      {
+        "text": "Кто написал роман 'Робинзон Крузо'?",
+        "question_type": "single",
+        "options": [
+          { "text": "Свифт", "is_correct": false, "order": 0 },
+          { "text": "Дефо", "is_correct": true, "order": 1 },
+          { "text": "Верн", "is_correct": false, "order": 2 },
+          { "text": "Дюма", "is_correct": false, "order": 3 }
+        ]
+      },
+      {
+        "text": "Какие произведения принадлежат Шекспиру?",
+        "question_type": "multi",
+        "options": [
+          { "text": "Гамлет", "is_correct": true, "order": 0 },
+          { "text": "Ромео и Джульетта", "is_correct": true, "order": 1 },
+          { "text": "Отверженные", "is_correct": false, "order": 2 },
+          { "text": "Отелло", "is_correct": true, "order": 3 },
+          { "text": "Король Лир", "is_correct": true, "order": 4 }
+        ]
+      },
+      {
+        "text": "Как звали сына графа Монте-Кристо?",
+        "question_type": "single",
+        "options": [
+          { "text": "Альбер", "is_correct": true, "order": 0 },
+          { "text": "Эдмон", "is_correct": false, "order": 1 },
+          { "text": "Фернан", "is_correct": false, "order": 2 },
+          { "text": "Максимилиан", "is_correct": false, "order": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Физическая культура: виды спорта",
+    "tags": ["физкультура", "спорт", "5 класс"],
+    "questions": [
+      {
+        "text": "Сколько игроков в баскетбольной команде на площадке?",
+        "question_type": "single",
+        "options": [
+          { "text": "5", "is_correct": true, "order": 0 },
+          { "text": "6", "is_correct": false, "order": 1 },
+          { "text": "7", "is_correct": false, "order": 2 },
+          { "text": "11", "is_correct": false, "order": 3 }
+        ]
+      },
+      {
+        "text": "Какие виды спорта являются олимпийскими?",
+        "question_type": "multi",
+        "options": [
+          { "text": "Легкая атлетика", "is_correct": true, "order": 0 },
+          { "text": "Шахматы", "is_correct": false, "order": 1 },
+          { "text": "Плавание", "is_correct": true, "order": 2 },
+          { "text": "Гимнастика", "is_correct": true, "order": 3 },
+          { "text": "Футбол", "is_correct": true, "order": 4 },
+          { "text": "Гольф", "is_correct": true, "order": 5 }
+        ]
+      },
+      {
+        "text": "Какой вид спорта называют 'королевой спорта'?",
+        "question_type": "single",
+        "options": [
+          { "text": "Футбол", "is_correct": false, "order": 0 },
+          { "text": "Легкая атлетика", "is_correct": true, "order": 1 },
+          { "text": "Баскетбол", "is_correct": false, "order": 2 },
+          { "text": "Теннис", "is_correct": false, "order": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Информатика: компьютерные сети",
+    "tags": ["информатика", "сети", "9 класс"],
+    "questions": [
+      {
+        "text": "Что такое IP-адрес?",
+        "question_type": "single",
+        "options": [
+          { "text": "Название сайта", "is_correct": false, "order": 0 },
+          { "text": "Уникальный адрес устройства в сети", "is_correct": true, "order": 1 },
+          { "text": "Протокол передачи данных", "is_correct": false, "order": 2 },
+          { "text": "Тип кабеля", "is_correct": false, "order": 3 }
+        ]
+      },
+      {
+        "text": "Какие устройства используются для построения компьютерных сетей?",
+        "question_type": "multi",
+        "options": [
+          { "text": "Маршрутизатор", "is_correct": true, "order": 0 },
+          { "text": "Коммутатор", "is_correct": true, "order": 1 },
+          { "text": "Процессор", "is_correct": false, "order": 2 },
+          { "text": "Сетевая карта", "is_correct": true, "order": 3 },
+          { "text": "Модем", "is_correct": true, "order": 4 }
+        ]
+      },
+      {
+        "text": "Что обозначает аббревиатура WWW?",
+        "question_type": "single",
+        "options": [
+          { "text": "World Web Wide", "is_correct": false, "order": 0 },
+          { "text": "World Wide Web", "is_correct": true, "order": 1 },
+          { "text": "Web World Wide", "is_correct": false, "order": 2 },
+          { "text": "Wide Web World", "is_correct": false, "order": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Химия: неорганическая",
+    "tags": ["химия", "неорганика", "8 класс"],
+    "questions": [
+      {
+        "text": "Какая формула у воды?",
+        "question_type": "single",
+        "options": [
+          { "text": "CO2", "is_correct": false, "order": 0 },
+          { "text": "H2O", "is_correct": true, "order": 1 },
+          { "text": "O2", "is_correct": false, "order": 2 },
+          { "text": "H2O2", "is_correct": false, "order": 3 }
+        ]
+      },
+      {
+        "text": "Какие из перечисленных веществ являются кислотами?",
+        "question_type": "multi",
+        "options": [
+          { "text": "HCl", "is_correct": true, "order": 0 },
+          { "text": "NaOH", "is_correct": false, "order": 1 },
+          { "text": "H2SO4", "is_correct": true, "order": 2 },
+          { "text": "NaCl", "is_correct": false, "order": 3 },
+          { "text": "HNO3", "is_correct": true, "order": 4 },
+          { "text": "CaO", "is_correct": false, "order": 5 }
+        ]
+      },
+      {
+        "text": "Какой газ выделяется при взаимодействии кислоты с мелом?",
+        "question_type": "single",
+        "options": [
+          { "text": "Кислород", "is_correct": false, "order": 0 },
+          { "text": "Водород", "is_correct": false, "order": 1 },
+          { "text": "Углекислый газ", "is_correct": true, "order": 2 },
+          { "text": "Азот", "is_correct": false, "order": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "История: Вторая мировая война",
+    "tags": ["история", "война", "10 класс"],
+    "questions": [
+      {
+        "text": "В каком году началась Вторая мировая война?",
+        "question_type": "single",
+        "options": [
+          { "text": "1939", "is_correct": true, "order": 0 },
+          { "text": "1941", "is_correct": false, "order": 1 },
+          { "text": "1937", "is_correct": false, "order": 2 },
+          { "text": "1940", "is_correct": false, "order": 3 }
+        ]
+      },
+      {
+        "text": "Какие страны входили в антигитлеровскую коалицию?",
+        "question_type": "multi",
+        "options": [
+          { "text": "СССР", "is_correct": true, "order": 0 },
+          { "text": "США", "is_correct": true, "order": 1 },
+          { "text": "Великобритания", "is_correct": true, "order": 2 },
+          { "text": "Германия", "is_correct": false, "order": 3 },
+          { "text": "Франция", "is_correct": true, "order": 4 },
+          { "text": "Япония", "is_correct": false, "order": 5 }
+        ]
+      },
+      {
+        "text": "Какое событие произошло 9 мая 1945 года?",
+        "question_type": "single",
+        "options": [
+          { "text": "Начало войны", "is_correct": false, "order": 0 },
+          { "text": "Капитуляция Германии", "is_correct": true, "order": 1 },
+          { "text": "Битва за Москву", "is_correct": false, "order": 2 },
+          { "text": "Курская битва", "is_correct": false, "order": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Астрономия: звезды",
+    "tags": ["астрономия", "звезды", "10 класс"],
+    "questions": [
+      {
+        "text": "Какая звезда является ближайшей к Земле?",
+        "question_type": "single",
+        "options": [
+          { "text": "Сириус", "is_correct": false, "order": 0 },
+          { "text": "Солнце", "is_correct": true, "order": 1 },
+          { "text": "Проксима Центавра", "is_correct": false, "order": 2 },
+          { "text": "Альфа Центавра", "is_correct": false, "order": 3 }
+        ]
+      },
+      {
+        "text": "Какие звезды относятся к сверхгигантам?",
+        "question_type": "multi",
+        "options": [
+          { "text": "Бетельгейзе", "is_correct": true, "order": 0 },
+          { "text": "Сириус", "is_correct": false, "order": 1 },
+          { "text": "Антарес", "is_correct": true, "order": 2 },
+          { "text": "Полярная звезда", "is_correct": false, "order": 3 },
+          { "text": "Ригель", "is_correct": true, "order": 4 }
+        ]
+      },
+      {
+        "text": "Как называется процесс превращения водорода в гелий в недрах звезды?",
+        "question_type": "single",
+        "options": [
+          { "text": "Деление", "is_correct": false, "order": 0 },
+          { "text": "Термоядерный синтез", "is_correct": true, "order": 1 },
+          { "text": "Ионизация", "is_correct": false, "order": 2 },
+          { "text": "Конденсация", "is_correct": false, "order": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Экономика: финансы",
+    "tags": ["экономика", "финансы", "11 класс"],
+    "questions": [
+      {
+        "text": "Что такое бюджет?",
+        "question_type": "single",
+        "options": [
+          { "text": "Список доходов и расходов", "is_correct": true, "order": 0 },
+          { "text": "Счет в банке", "is_correct": false, "order": 1 },
+          { "text": "Налоги", "is_correct": false, "order": 2 },
+          { "text": "Заработная плата", "is_correct": false, "order": 3 }
+        ]
+      },
+      {
+        "text": "Какие функции выполняют банки?",
+        "question_type": "multi",
+        "options": [
+          { "text": "Хранение денег", "is_correct": true, "order": 0 },
+          { "text": "Кредитование", "is_correct": true, "order": 1 },
+          { "text": "Производство товаров", "is_correct": false, "order": 2 },
+          { "text": "Осуществление платежей", "is_correct": true, "order": 3 },
+          { "text": "Выпуск акций", "is_correct": true, "order": 4 }
+        ]
+      },
+      {
+        "text": "Что такое депозит?",
+        "question_type": "single",
+        "options": [
+          { "text": "Кредит", "is_correct": false, "order": 0 },
+          { "text": "Вклад в банке", "is_correct": true, "order": 1 },
+          { "text": "Страхование", "is_correct": false, "order": 2 },
+          { "text": "Инвестиция", "is_correct": false, "order": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Биология: анатомия человека",
+    "tags": ["биология", "анатомия", "8 класс"],
+    "questions": [
+      {
+        "text": "Какой орган является главным в кровеносной системе?",
+        "question_type": "single",
+        "options": [
+          { "text": "Легкие", "is_correct": false, "order": 0 },
+          { "text": "Сердце", "is_correct": true, "order": 1 },
+          { "text": "Печень", "is_correct": false, "order": 2 },
+          { "text": "Почки", "is_correct": false, "order": 3 }
+        ]
+      },
+      {
+        "text": "Какие функции выполняет скелет человека?",
+        "question_type": "multi",
+        "options": [
+          { "text": "Опорная", "is_correct": true, "order": 0 },
+          { "text": "Защитная", "is_correct": true, "order": 1 },
+          { "text": "Двигательная", "is_correct": true, "order": 2 },
+          { "text": "Пищеварительная", "is_correct": false, "order": 3 },
+          { "text": "Кроветворная", "is_correct": true, "order": 4 }
+        ]
+      },
+      {
+        "text": "Сколько костей в скелете взрослого человека?",
+        "question_type": "single",
+        "options": [
+          { "text": "150-160", "is_correct": false, "order": 0 },
+          { "text": "200-210", "is_correct": true, "order": 1 },
+          { "text": "250-260", "is_correct": false, "order": 2 },
+          { "text": "300-310", "is_correct": false, "order": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Физика: электричество",
+    "tags": ["физика", "электричество", "8 класс"],
+    "questions": [
+      {
+        "text": "Как называется единица измерения напряжения?",
+        "question_type": "single",
+        "options": [
+          { "text": "Ампер", "is_correct": false, "order": 0 },
+          { "text": "Вольт", "is_correct": true, "order": 1 },
+          { "text": "Ом", "is_correct": false, "order": 2 },
+          { "text": "Ватт", "is_correct": false, "order": 3 }
+        ]
+      },
+      {
+        "text": "Какие материалы являются проводниками электричества?",
+        "question_type": "multi",
+        "options": [
+          { "text": "Медь", "is_correct": true, "order": 0 },
+          { "text": "Алюминий", "is_correct": true, "order": 1 },
+          { "text": "Резина", "is_correct": false, "order": 2 },
+          { "text": "Золото", "is_correct": true, "order": 3 },
+          { "text": "Дерево", "is_correct": false, "order": 4 },
+          { "text": "Железо", "is_correct": true, "order": 5 }
+        ]
+      },
+      {
+        "text": "Как называется устройство для измерения силы тока?",
+        "question_type": "single",
+        "options": [
+          { "text": "Вольтметр", "is_correct": false, "order": 0 },
+          { "text": "Амперметр", "is_correct": true, "order": 1 },
+          { "text": "Омметр", "is_correct": false, "order": 2 },
+          { "text": "Реостат", "is_correct": false, "order": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Русская литература: поэзия",
+    "tags": ["литература", "поэзия", "9 класс"],
+    "questions": [
+      {
+        "text": "Кто из поэтов был современником Пушкина?",
+        "question_type": "single",
+        "options": [
+          { "text": "Блок", "is_correct": false, "order": 0 },
+          { "text": "Лермонтов", "is_correct": true, "order": 1 },
+          { "text": "Есенин", "is_correct": false, "order": 2 },
+          { "text": "Маяковский", "is_correct": false, "order": 3 }
+        ]
+      },
+      {
+        "text": "Какие стихотворения написаны А.А. Фетом?",
+        "question_type": "multi",
+        "options": [
+          { "text": "Шепот, робкое дыханье", "is_correct": true, "order": 0 },
+          { "text": "Я вас любил", "is_correct": false, "order": 1 },
+          { "text": "На заре ты ее не буди", "is_correct": true, "order": 2 },
+          { "text": "Белеет парус одинокий", "is_correct": false, "order": 3 },
+          { "text": "Учись у них - у дуба, у березы", "is_correct": true, "order": 4 }
+        ]
+      },
+      {
+        "text": "Кому посвящено стихотворение 'Я помню чудное мгновенье'?",
+        "question_type": "single",
+        "options": [
+          { "text": "Н. Гончаровой", "is_correct": false, "order": 0 },
+          { "text": "А. Керн", "is_correct": true, "order": 1 },
+          { "text": "Е. Бакуниной", "is_correct": false, "order": 2 },
+          { "text": "М. Раевской", "is_correct": false, "order": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "География: страны мира",
+    "tags": ["география", "страны", "7 класс"],
+    "questions": [
+      {
+        "text": "Какая страна является самой большой по площади?",
+        "question_type": "single",
+        "options": [
+          { "text": "США", "is_correct": false, "order": 0 },
+          { "text": "Канада", "is_correct": false, "order": 1 },
+          { "text": "Россия", "is_correct": true, "order": 2 },
+          { "text": "Китай", "is_correct": false, "order": 3 }
+        ]
+      },
+      {
+        "text": "В каких странах говорят на испанском языке?",
+        "question_type": "multi",
+        "options": [
+          { "text": "Испания", "is_correct": true, "order": 0 },
+          { "text": "Мексика", "is_correct": true, "order": 1 },
+          { "text": "Бразилия", "is_correct": false, "order": 2 },
+          { "text": "Аргентина", "is_correct": true, "order": 3 },
+          { "text": "Португалия", "is_correct": false, "order": 4 },
+          { "text": "Колумбия", "is_correct": true, "order": 5 }
+        ]
+      },
+      {
+        "text": "Какая страна называется 'страной утренней свежести'?",
+        "question_type": "single",
+        "options": [
+          { "text": "Япония", "is_correct": false, "order": 0 },
+          { "text": "Китай", "is_correct": false, "order": 1 },
+          { "text": "Корея", "is_correct": true, "order": 2 },
+          { "text": "Вьетнам", "is_correct": false, "order": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Право: уголовное право",
+    "tags": ["право", "уголовное", "11 класс"],
+    "questions": [
+      {
+        "text": "Какой возраст уголовной ответственности в РФ?",
+        "question_type": "single",
+        "options": [
+          { "text": "14 лет", "is_correct": true, "order": 0 },
+          { "text": "16 лет", "is_correct": false, "order": 1 },
+          { "text": "18 лет", "is_correct": false, "order": 2 },
+          { "text": "21 год", "is_correct": false, "order": 3 }
+        ]
+      },
+      {
+        "text": "Какие виды наказаний предусмотрены УК РФ?",
+        "question_type": "multi",
+        "options": [
+          { "text": "Штраф", "is_correct": true, "order": 0 },
+          { "text": "Лишение свободы", "is_correct": true, "order": 1 },
+          { "text": "Выговор", "is_correct": false, "order": 2 },
+          { "text": "Исправительные работы", "is_correct": true, "order": 3 },
+          { "text": "Конфискация имущества", "is_correct": true, "order": 4 }
+        ]
+      },
+      {
+        "text": "Что такое преступление?",
+        "question_type": "single",
+        "options": [
+          { "text": "Нарушение правил дорожного движения", "is_correct": false, "order": 0 },
+          { "text": "Виновно совершенное общественно опасное деяние", "is_correct": true, "order": 1 },
+          { "text": "Невыполнение договорных обязательств", "is_correct": false, "order": 2 },
+          { "text": "Административный проступок", "is_correct": false, "order": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Химия: растворы",
+    "tags": ["химия", "растворы", "9 класс"],
+    "questions": [
+      {
+        "text": "Что такое раствор?",
+        "question_type": "single",
+        "options": [
+          { "text": "Химическое соединение", "is_correct": false, "order": 0 },
+          { "text": "Однородная смесь", "is_correct": true, "order": 1 },
+          { "text": "Чистое вещество", "is_correct": false, "order": 2 },
+          { "text": "Взвесь", "is_correct": false, "order": 3 }
+        ]
+      },
+      {
+        "text": "Какие факторы влияют на скорость растворения?",
+        "question_type": "multi",
+        "options": [
+          { "text": "Температура", "is_correct": true, "order": 0 },
+          { "text": "Перемешивание", "is_correct": true, "order": 1 },
+          { "text": "Цвет вещества", "is_correct": false, "order": 2 },
+          { "text": "Измельчение", "is_correct": true, "order": 3 },
+          { "text": "Давление (для газов)", "is_correct": true, "order": 4 }
+        ]
+      },
+      {
+        "text": "Как называется вещество, которое растворяется в воде?",
+        "question_type": "single",
+        "options": [
+          { "text": "Растворитель", "is_correct": false, "order": 0 },
+          { "text": "Растворенное вещество", "is_correct": true, "order": 1 },
+          { "text": "Гидрат", "is_correct": false, "order": 2 },
+          { "text": "Кристаллогидрат", "is_correct": false, "order": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Биология: эволюция",
+    "tags": ["биология", "эволюция", "11 класс"],
+    "questions": [
+      {
+        "text": "Кто является автором теории эволюции?",
+        "question_type": "single",
+        "options": [
+          { "text": "Ламарк", "is_correct": false, "order": 0 },
+          { "text": "Дарвин", "is_correct": true, "order": 1 },
+          { "text": "Линней", "is_correct": false, "order": 2 },
+          { "text": "Уоллес", "is_correct": false, "order": 3 }
+        ]
+      },
+      {
+        "text": "Какие факторы эволюции существуют?",
+        "question_type": "multi",
+        "options": [
+          { "text": "Наследственная изменчивость", "is_correct": true, "order": 0 },
+          { "text": "Борьба за существование", "is_correct": true, "order": 1 },
+          { "text": "Мутации", "is_correct": true, "order": 2 },
+          { "text": "Клонирование", "is_correct": false, "order": 3 },
+          { "text": "Естественный отбор", "is_correct": true, "order": 4 }
+        ]
+      },
+      {
+        "text": "Что такое естественный отбор?",
+        "question_type": "single",
+        "options": [
+          { "text": "Выживание наиболее приспособленных", "is_correct": true, "order": 0 },
+          { "text": "Искусственное разведение", "is_correct": false, "order": 1 },
+          { "text": "Изменение генов", "is_correct": false, "order": 2 },
+          { "text": "Миграция организмов", "is_correct": false, "order": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Физика: термодинамика",
+    "tags": ["физика", "термодинамика", "10 класс"],
+    "questions": [
+      {
+        "text": "Что такое абсолютный ноль?",
+        "question_type": "single",
+        "options": [
+          { "text": "0°C", "is_correct": false, "order": 0 },
+          { "text": "-273,15°C", "is_correct": true, "order": 1 },
+          { "text": "-100°C", "is_correct": false, "order": 2 },
+          { "text": "0 K", "is_correct": true, "order": 3 }
+        ]
+      },
+      {
+        "text": "Какие процессы являются изопроцессами?",
+        "question_type": "multi",
+        "options": [
+          { "text": "Изотермический", "is_correct": true, "order": 0 },
+          { "text": "Изохорный", "is_correct": true, "order": 1 },
+          { "text": "Изобарный", "is_correct": true, "order": 2 },
+          { "text": "Адиабатный", "is_correct": false, "order": 3 },
+          { "text": "Циклический", "is_correct": false, "order": 4 }
+        ]
+      },
+      {
+        "text": "Как называется энергия, которая передается от одного тела к другому без совершения работы?",
+        "question_type": "single",
+        "options": [
+          { "text": "Работа", "is_correct": false, "order": 0 },
+          { "text": "Теплота", "is_correct": true, "order": 1 },
+          { "text": "Мощность", "is_correct": false, "order": 2 },
+          { "text": "Энергия", "is_correct": false, "order": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "История: Древний Рим",
+    "tags": ["история", "древний рим", "5 класс"],
+    "questions": [
+      {
+        "text": "Как назывался простой народ в Древнем Риме?",
+        "question_type": "single",
+        "options": [
+          { "text": "Патриции", "is_correct": false, "order": 0 },
+          { "text": "Плебеи", "is_correct": true, "order": 1 },
+          { "text": "Рабы", "is_correct": false, "order": 2 },
+          { "text": "Сенаторы", "is_correct": false, "order": 3 }
+        ]
+      },
+      {
+        "text": "Какие сооружения были построены в Древнем Риме?",
+        "question_type": "multi",
+        "options": [
+          { "text": "Колизей", "is_correct": true, "order": 0 },
+          { "text": "Пантеон", "is_correct": true, "order": 1 },
+          { "text": "Акведуки", "is_correct": true, "order": 2 },
+          { "text": "Пирамиды", "is_correct": false, "order": 3 },
+          { "text": "Форум", "is_correct": true, "order": 4 }
+        ]
+      },
+      {
+        "text": "Какая река была главной в Риме?",
+        "question_type": "single",
+        "options": [
+          { "text": "Нил", "is_correct": false, "order": 0 },
+          { "text": "Тибр", "is_correct": true, "order": 1 },
+          { "text": "Рейн", "is_correct": false, "order": 2 },
+          { "text": "Дунай", "is_correct": false, "order": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Информатика: программирование",
+    "tags": ["информатика", "программирование", "9 класс"],
+    "questions": [
+      {
+        "text": "Что такое переменная в программировании?",
+        "question_type": "single",
+        "options": [
+          { "text": "Число", "is_correct": false, "order": 0 },
+          { "text": "Именованная область памяти", "is_correct": true, "order": 1 },
+          { "text": "Функция", "is_correct": false, "order": 2 },
+          { "text": "Массив", "is_correct": false, "order": 3 }
+        ]
+      },
+      {
+        "text": "Какие языки программирования являются объектно-ориентированными?",
+        "question_type": "multi",
+        "options": [
+          { "text": "Java", "is_correct": true, "order": 0 },
+          { "text": "C++", "is_correct": true, "order": 1 },
+          { "text": "Python", "is_correct": true, "order": 2 },
+          { "text": "HTML", "is_correct": false, "order": 3 },
+          { "text": "C#", "is_correct": true, "order": 4 },
+          { "text": "SQL", "is_correct": false, "order": 5 }
+        ]
+      },
+      {
+        "text": "Что такое цикл в программировании?",
+        "question_type": "single",
+        "options": [
+          { "text": "Условный оператор", "is_correct": false, "order": 0 },
+          { "text": "Многократное выполнение блока команд", "is_correct": true, "order": 1 },
+          { "text": "Математическая операция", "is_correct": false, "order": 2 },
+          { "text": "Функция", "is_correct": false, "order": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Обществознание: политика",
+    "tags": ["обществознание", "политика", "10 класс"],
+    "questions": [
+      {
+        "text": "Что такое демократия?",
+        "question_type": "single",
+        "options": [
+          { "text": "Власть одного", "is_correct": false, "order": 0 },
+          { "text": "Власть народа", "is_correct": true, "order": 1 },
+          { "text": "Власть богатых", "is_correct": false, "order": 2 },
+          { "text": "Отсутствие власти", "is_correct": false, "order": 3 }
+        ]
+      },
+      {
+        "text": "Какие признаки характерны для правового государства?",
+        "question_type": "multi",
+        "options": [
+          { "text": "Верховенство закона", "is_correct": true, "order": 0 },
+          { "text": "Разделение властей", "is_correct": true, "order": 1 },
+          { "text": "Диктатура", "is_correct": false, "order": 2 },
+          { "text": "Защита прав человека", "is_correct": true, "order": 3 },
+          { "text": "Цензура", "is_correct": false, "order": 4 }
+        ]
+      },
+      {
+        "text": "Как называется высший законодательный орган РФ?",
+        "question_type": "single",
+        "options": [
+          { "text": "Правительство", "is_correct": false, "order": 0 },
+          { "text": "Федеральное собрание", "is_correct": true, "order": 1 },
+          { "text": "Верховный суд", "is_correct": false, "order": 2 },
+          { "text": "Администрация президента", "is_correct": false, "order": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Музыка: современная",
+    "tags": ["музыка", "современная", "6 класс"],
+    "questions": [
+      {
+        "text": "Какой жанр музыки возник в конце 20 века?",
+        "question_type": "single",
+        "options": [
+          { "text": "Рок", "is_correct": false, "order": 0 },
+          { "text": "Хип-хоп", "is_correct": true, "order": 1 },
+          { "text": "Джаз", "is_correct": false, "order": 2 },
+          { "text": "Классика", "is_correct": false, "order": 3 }
+        ]
+      },
+      {
+        "text": "Какие инструменты используются в рок-музыке?",
+        "question_type": "multi",
+        "options": [
+          { "text": "Электрогитара", "is_correct": true, "order": 0 },
+          { "text": "Бас-гитара", "is_correct": true, "order": 1 },
+          { "text": "Ударная установка", "is_correct": true, "order": 2 },
+          { "text": "Арфа", "is_correct": false, "order": 3 },
+          { "text": "Скрипка", "is_correct": false, "order": 4 },
+          { "text": "Синтезатор", "is_correct": true, "order": 5 }
+        ]
+      },
+      {
+        "text": "Что такое бит в музыке?",
+        "question_type": "single",
+        "options": [
+          { "text": "Мелодия", "is_correct": false, "order": 0 },
+          { "text": "Ритмическая основа", "is_correct": true, "order": 1 },
+          { "text": "Скорость", "is_correct": false, "order": 2 },
+          { "text": "Громкость", "is_correct": false, "order": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Философия: этика",
+    "tags": ["философия", "этика", "11 класс"],
+    "questions": [
+      {
+        "text": "Что такое мораль?",
+        "question_type": "single",
+        "options": [
+          { "text": "Законы государства", "is_correct": false, "order": 0 },
+          { "text": "Нормы поведения в обществе", "is_correct": true, "order": 1 },
+          { "text": "Религиозные догмы", "is_correct": false, "order": 2 },
+          { "text": "Научные теории", "is_correct": false, "order": 3 }
+        ]
+      },
+      {
+        "text": "Какие категории относятся к этике?",
+        "question_type": "multi",
+        "options": [
+          { "text": "Добро", "is_correct": true, "order": 0 },
+          { "text": "Зло", "is_correct": true, "order": 1 },
+          { "text": "Истина", "is_correct": false, "order": 2 },
+          { "text": "Справедливость", "is_correct": true, "order": 3 },
+          { "text": "Долг", "is_correct": true, "order": 4 },
+          { "text": "Красота", "is_correct": false, "order": 5 }
+        ]
+      },
+      {
+        "text": "Кто ввел понятие 'категорический императив'?",
+        "question_type": "single",
+        "options": [
+          { "text": "Аристотель", "is_correct": false, "order": 0 },
+          { "text": "Кант", "is_correct": true, "order": 1 },
+          { "text": "Платон", "is_correct": false, "order": 2 },
+          { "text": "Ницше", "is_correct": false, "order": 3 }
+        ]
+      }
+    ]
+  }
+]
