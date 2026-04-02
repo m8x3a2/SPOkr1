@@ -1,0 +1,25 @@
+➜  Local:   http://localhost:5173/
+
+  ➜  Network: use --host to expose
+
+  ➜  press h + enter to show help
+
+10:09:27 [vite] warning: Duplicate "style" attribute in JSX element
+
+122|            <input style={{ ...S.input, marginBottom: 0, flex: 1 }} placeholder={`Вариант ${i + 1} (макс. 200 символов)`}
+
+123|              maxLength={200} value={opt.text} onChange={e => updateOption(i, "text", e.target.value)}
+
+124|              style={{ ...S.input, marginBottom: 0, flex: 1, wordBreak: "break-word", overflowWrap: "anywhere" }} />
+
+   |              ^
+
+125|            <button style={{ ...S.btn, ...S.btnDanger, padding: "3px 8px", flexShrink: 0 }}
+
+126|              onClick={() => removeOption(i)} disabled={q.options.length <= 2} title="Удалить вариант">✕</button>
+
+  Plugin: vite:esbuild
+
+  File: C:/Users/UserA/Max/SPO/PySPO02/frontend/src/pages/Admin.jsx
+
+варианты ответов не переносятся на новую строку, а наименование вопроса переносится, вопрос нормально работает

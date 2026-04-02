@@ -1,5 +1,10 @@
 import React, { useState, useEffect, useRef } from "react"
 
+
+// Обрезать длинную строку до maxLen символов
+const truncate = (str, maxLen = 50) =>
+  str && str.length > maxLen ? str.slice(0, maxLen) + "…" : str
+
 const S = {
   card: { background: "#fff", border: "1px solid #e0e0e0", borderRadius: 8, padding: 16, marginBottom: 12 },
   btn: { padding: "6px 14px", borderRadius: 6, border: "none", cursor: "pointer", fontSize: 14 },
@@ -251,7 +256,7 @@ export default function Tests({ API, token, user }) {
     return (
       <div>
         <button style={{ ...S.btn, ...S.btnGray, marginBottom: 16 }} onClick={() => setActiveTest(null)}>← Назад</button>
-        <h2>{activeTest.title}</h2>
+        <h2 style={{ wordBreak: "break-word", overflowWrap: "anywhere" }}>{activeTest.title}</h2>
         {activeTest.tags?.length > 0 && (
           <div style={{ marginBottom: 12 }}>
             {activeTest.tags.map(t => (
@@ -270,7 +275,7 @@ export default function Tests({ API, token, user }) {
           const isUnanswered = unanswered.includes(q.id)
           return (
             <div key={q.id} style={{ ...S.card, border: isUnanswered ? "2px solid #ef4444" : "1px solid #e0e0e0" }}>
-              <b style={{ fontSize: 15 }}>{idx + 1}. {q.text}</b>
+              <b style={{ fontSize: 15, wordBreak: "break-word", overflowWrap: "anywhere" }}>{idx + 1}. {q.text}</b>
               {q.question_type === "multi" && <div style={{ fontSize: 12, color: "#888", marginTop: 2 }}>(можно выбрать несколько)</div>}
               <div style={{ marginTop: 10 }}>
                 {q.options.sort((a, b) => a.order - b.order).map(opt => {
@@ -350,7 +355,7 @@ export default function Tests({ API, token, user }) {
                           <span style={{ width: 18, textAlign: "center", flexShrink: 0, fontSize: 14 }}>
                             {isCorrect ? "✓" : (userPicked ? "✗" : "")}
                           </span>
-                          <span style={{ flex: 1, fontSize: 14 }}>{opt.text}</span>
+                          <span style={{ flex: 1, fontSize: 14, wordBreak: "break-word", overflowWrap: "anywhere" }}>{opt.text}</span>
                           {isCorrect && !userPicked && (
                             <span style={{ fontSize: 12, color: "#16a34a", fontStyle: "italic" }}>правильный</span>
                           )}
@@ -453,7 +458,7 @@ export default function Tests({ API, token, user }) {
             {tests.map(t => (
               <div key={t.id} style={{ ...S.card, display: "flex", alignItems: "center", gap: 10 }}>
                 <span style={{ flex: 1 }}>
-                  <span style={{ fontSize: 16 }}>📋 <b>{t.title}</b></span>
+                  <span style={{ fontSize: 16 }}>📋 <b title={t.title}>{truncate(t.title)}</b></span>
                   {t.tags?.length > 0 && (
                     <span style={{ marginLeft: 8 }}>
                       {t.tags.map(tag => (
@@ -502,7 +507,7 @@ export default function Tests({ API, token, user }) {
               const rs = resultStyle(r.score, total)
               return (
                 <div key={r.id || i} style={{ ...S.card, display: "flex", alignItems: "center", gap: 12, borderLeft: `4px solid ${rs.border}` }}>
-                  <span style={{ flex: 1, fontSize: 14 }}>{rs.emoji} <b>{r.test_title_snapshot || `Тест #${r.test_id}`}</b></span>
+                  <span style={{ flex: 1, fontSize: 14 }} title={r.test_title_snapshot}>{rs.emoji} <b>{truncate(r.test_title_snapshot || `Тест #${r.test_id}`)}</b></span>
                   <span style={{ padding: "4px 12px", borderRadius: 12, fontWeight: "bold", background: rs.bg, color: rs.text, fontSize: 15 }}>
                     {r.score}/{total}
                   </span>

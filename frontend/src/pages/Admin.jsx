@@ -1,5 +1,9 @@
 import React, { useState, useEffect, useCallback } from "react"
 
+
+const truncate = (str, maxLen = 50) =>
+  str && str.length > maxLen ? str.slice(0, maxLen) + "…" : str
+
 const S = {
   card: { background: "#fff", border: "1px solid #e0e0e0", borderRadius: 8, padding: 16, marginBottom: 12 },
   btn: { padding: "6px 14px", borderRadius: 6, border: "none", cursor: "pointer", fontSize: 14 },
@@ -55,6 +59,20 @@ function parseTagInput(raw) {
   return raw.split(",").map(t => t.replace(/^#/, "").trim().toLowerCase()).filter(Boolean)
 }
 
+// Красиво форматирует ошибки Pydantic 422 или строку
+function parseApiError(d) {
+  if (!d) return "Неизвестная ошибка"
+  if (typeof d.detail === "string") return d.detail
+  if (Array.isArray(d.detail)) {
+    return d.detail.map(e => {
+      const loc = e.loc?.slice(1).join(" → ") || ""
+      const msg = e.msg?.replace("Value error, ", "") || ""
+      return loc ? `${loc}: ${msg}` : msg
+    }).join("; ")
+  }
+  return "Ошибка при сохранении"
+}
+
 const emptyQForm = () => ({
   text: "", question_type: "single",
   options: [{ text: "", is_correct: false }, { text: "", is_correct: false }]
@@ -66,7 +84,7 @@ function QuestionEditor({ q, onChange, onRemove, index }) {
   const setSingleCorrect = (i) =>
     onChange({ ...q, options: q.options.map((o, idx) => ({ ...o, is_correct: idx === i })) })
   const addOption = () => {
-    if (q.options.length >= 20) return
+    if (q.options.length >= 50) return
     onChange({ ...q, options: [...q.options, { text: "", is_correct: false }] })
   }
   const removeOption = (i) => {
@@ -85,11 +103,11 @@ function QuestionEditor({ q, onChange, onRemove, index }) {
         </select>
         {onRemove && <button style={{ ...S.btn, ...S.btnDanger, padding: "4px 10px" }} onClick={onRemove}>✕</button>}
       </div>
-      <input style={S.input} placeholder="Текст вопроса" value={q.text}
+      <input style={S.input} placeholder="Текст вопроса (макс. 200 символов)" value={q.text} maxLength={200}
         onChange={e => onChange({ ...q, text: e.target.value })} />
       <div style={{ fontSize: 12, color: "#666", marginBottom: 6 }}>
         {q.question_type === "single" ? "Отметьте один правильный ответ (●)" : "Отметьте все правильные ответы (☑)"}
-        &nbsp;· Вариантов: {q.options.length} (мин. 2, макс. 20)
+        &nbsp;· Вариантов: {q.options.length} (мин. 2, макс. 50)
       </div>
       {q.options.map((opt, i) => (
         <div key={i} style={{ display: "flex", gap: 6, alignItems: "center", marginBottom: 6 }}>
@@ -101,21 +119,25 @@ function QuestionEditor({ q, onChange, onRemove, index }) {
               onChange={e => updateOption(i, "is_correct", e.target.checked)}
               style={{ cursor: "pointer", width: 16, height: 16, flexShrink: 0 }} />
           )}
-          <input style={{ ...S.input, marginBottom: 0, flex: 1 }} placeholder={`Вариант ${i + 1}`}
-            value={opt.text} onChange={e => updateOption(i, "text", e.target.value)} />
+          <input style={{ ...S.input, marginBottom: 0, flex: 1 }} placeholder={`Вариант ${i + 1} (макс. 200 символов)`}
+            maxLength={200} value={opt.text} onChange={e => updateOption(i, "text", e.target.value)}
+            style={{ ...S.input, marginBottom: 0, flex: 1, wordBreak: "break-word", overflowWrap: "anywhere" }} />
           <button style={{ ...S.btn, ...S.btnDanger, padding: "3px 8px", flexShrink: 0 }}
             onClick={() => removeOption(i)} disabled={q.options.length <= 2} title="Удалить вариант">✕</button>
         </div>
       ))}
       <button style={{ ...S.btn, ...S.btnGray, fontSize: 12, marginTop: 4 }}
-        onClick={addOption} disabled={q.options.length >= 20}>+ Добавить вариант</button>
+        onClick={addOption} disabled={q.options.length >= 50}>+ Добавить вариант</button>
     </div>
   )
 }
 
 function TestForm({ data, setter, onSubmit, onCancel, submitLabel, errorMsg }) {
   const [tagInput, setTagInput] = useState("")
-  const addQuestion = () => setter({ ...data, questions: [...data.questions, emptyQForm()] })
+  const addQuestion = () => {
+    if (data.questions.length >= 100) return
+    setter({ ...data, questions: [...data.questions, emptyQForm()] })
+  }
   const updateQuestion = (i, updated) =>
     setter({ ...data, questions: data.questions.map((q, idx) => idx === i ? updated : q) })
   const removeQuestion = (i) =>
@@ -131,8 +153,9 @@ function TestForm({ data, setter, onSubmit, onCancel, submitLabel, errorMsg }) {
       q.options.every(o => o.text.trim()) && q.options.some(o => o.is_correct))
   return (
     <div style={S.card}>
-      <input style={S.input} placeholder="Название теста" value={data.title}
+      <input style={S.input} placeholder="Название теста (макс. 100 символов)" value={data.title} maxLength={100}
         onChange={e => setter({ ...data, title: e.target.value })} />
+      <div style={{ fontSize: 11, color: data.title.length > 90 ? "#ef4444" : "#aaa", marginTop: -6, marginBottom: 6, textAlign: "right" }}>{data.title.length}/100</div>
       {errorMsg && (
         <div style={{ background: "#fef2f2", border: "1px solid #fca5a5", borderRadius: 6, padding: "6px 12px", marginBottom: 8, color: "#991b1b", fontSize: 13 }}>
           ❌ {errorMsg}
@@ -148,8 +171,8 @@ function TestForm({ data, setter, onSubmit, onCancel, submitLabel, errorMsg }) {
           ))}
         </div>
         <div style={{ display: "flex", gap: 6 }}>
-          <input style={{ ...S.input, marginBottom: 0, flex: 1 }} placeholder="Добавить тег (Enter)"
-            value={tagInput} onChange={e => setTagInput(e.target.value)}
+          <input style={{ ...S.input, marginBottom: 0, flex: 1 }} placeholder="Добавить тег (макс. 40 символов)"
+            value={tagInput} maxLength={40} onChange={e => setTagInput(e.target.value)}
             onKeyDown={e => e.key === "Enter" && addTag()} />
           <button style={{ ...S.btn, ...S.btnGray }} onClick={addTag}>+ Тег</button>
         </div>
@@ -157,7 +180,7 @@ function TestForm({ data, setter, onSubmit, onCancel, submitLabel, errorMsg }) {
       <div style={{ marginBottom: 8 }}>
         <div style={{ ...S.row }}>
           <b style={{ fontSize: 14 }}>Вопросы ({data.questions.length})</b>
-          <button style={{ ...S.btn, ...S.btnSuccess, fontSize: 13 }} onClick={addQuestion}>+ Добавить вопрос</button>
+          <button style={{ ...S.btn, ...S.btnSuccess, fontSize: 13 }} onClick={addQuestion} disabled={data.questions.length >= 100} title={data.questions.length >= 100 ? "Максимум 100 вопросов" : ""}>+ Добавить вопрос</button>
         </div>
         {data.questions.map((q, i) => (
           <QuestionEditor key={i} index={i} q={q}
@@ -245,7 +268,7 @@ export default function Admin({ API, token }) {
     const res = await fetch(`${API}/admin/tests`, { method: "POST", headers, body: JSON.stringify(newTest) })
     if (!res.ok) {
       const d = await res.json()
-      setFormError(d.detail || "Ошибка при создании теста")
+      setFormError(parseApiError(d))
       return
     }
     setNewTest(emptyTest()); setShowCreate(false)
@@ -321,7 +344,7 @@ export default function Admin({ API, token }) {
     })
     if (!res.ok) {
       const d = await res.json()
-      setFormError(d.detail || "Ошибка при сохранении")
+      setFormError(parseApiError(d))
       return
     }
     setEditingTest(null); loadTests(testsPage); flash("✅ Тест обновлён!")
@@ -444,7 +467,7 @@ export default function Admin({ API, token }) {
                 {tests.map(t => (
                   <div key={t.id} style={{ ...S.card, ...S.row }}>
                     <span style={{ flex: 1 }}>
-                      <b>#{t.id}</b> {t.title}
+                      <b>#{t.id}</b> <span title={t.title}>{truncate(t.title)}</span>
                       {t.tags?.length > 0 && (
                         <span style={{ marginLeft: 8 }}>
                           {t.tags.map(tag => (
@@ -496,7 +519,7 @@ export default function Admin({ API, token }) {
                 <div key={r.id} style={{ ...S.card, ...S.row }}>
                   <span style={{ flex: 1, fontSize: 14 }}>
                     👤 <b>#{r.user_id}</b> &nbsp;|&nbsp;
-                    📋 {r.test_title_snapshot || `Тест #${r.test_id}`} &nbsp;|&nbsp;
+                    📋 <span title={r.test_title_snapshot}>{truncate(r.test_title_snapshot || `Тест #${r.test_id}`)}</span> &nbsp;|&nbsp;
                     <b>{r.score}/{r.total_questions_snapshot ?? "?"}</b>
                   </span>
                   <button style={{ ...S.btn, ...S.btnDanger }} onClick={() => deleteResult(r.id)}>🗑</button>
