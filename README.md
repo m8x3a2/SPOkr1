@@ -136,3 +136,23 @@ UPDATE users SET role = 'admin' WHERE username = 'ваш_логин';
 | DELETE | /admin/users/{id} | Удалить пользователя | Админ |
 | GET | /admin/results | Все результаты | Админ |
 | DELETE | /admin/results/{id} | Удалить результат | Админ |
+
+
+### sql команды
+
+
+-- Очистить ВСЕ данные (порядок важен из-за FK)
+
+TRUNCATE question_options, questions, test_tags, tests, tags, results, users RESTART IDENTITY CASCADE;
+
+-- Очистить только тесты и всё связанное (вопросы, теги, результаты)
+
+TRUNCATE question_options, questions, test_tags, tests, tags RESTART IDENTITY CASCADE;
+
+-- Только тесты (вопросы удалятся каскадом, результаты останутся)
+
+DELETE FROM tests;
+
+-- Только результаты
+
+TRUNCATE results RESTART IDENTITY;
