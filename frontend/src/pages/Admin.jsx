@@ -119,9 +119,8 @@ function QuestionEditor({ q, onChange, onRemove, index }) {
               onChange={e => updateOption(i, "is_correct", e.target.checked)}
               style={{ cursor: "pointer", width: 16, height: 16, flexShrink: 0 }} />
           )}
-          <input style={{ ...S.input, marginBottom: 0, flex: 1 }} placeholder={`Вариант ${i + 1} (макс. 200 символов)`}
-            maxLength={200} value={opt.text} onChange={e => updateOption(i, "text", e.target.value)}
-            style={{ ...S.input, marginBottom: 0, flex: 1, wordBreak: "break-word", overflowWrap: "anywhere" }} />
+          <input style={{ ...S.input, marginBottom: 0, flex: 1, wordBreak: "break-word", overflowWrap: "anywhere" }} placeholder={`Вариант ${i + 1} (макс. 200 символов)`}
+            maxLength={200} value={opt.text} onChange={e => updateOption(i, "text", e.target.value)} />
           <button style={{ ...S.btn, ...S.btnDanger, padding: "3px 8px", flexShrink: 0 }}
             onClick={() => removeOption(i)} disabled={q.options.length <= 2} title="Удалить вариант">✕</button>
         </div>

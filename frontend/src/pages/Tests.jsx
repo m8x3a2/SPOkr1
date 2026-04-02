@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react"
+import React, { useState, useEffect } from "react"
 
 
 // Обрезать длинную строку до maxLen символов
@@ -282,15 +282,15 @@ export default function Tests({ API, token, user }) {
                   const selected = isOptionSelected(q.id, opt.id, q.question_type)
                   return (
                     <label key={opt.id} style={{
-                      display: "block", padding: "8px 12px", marginBottom: 6, borderRadius: 6,
+                      display: "flex", alignItems: "flex-start", padding: "8px 12px", marginBottom: 6, borderRadius: 6,
                       cursor: "pointer",
                       background: selected ? "#ede9fe" : "#f9fafb",
                       border: selected ? "2px solid #4f46e5" : "2px solid transparent",
                     }}>
                       <input type={q.question_type === "single" ? "radio" : "checkbox"}
-                        name={`q${q.id}`} style={{ marginRight: 8 }} checked={selected}
+                        name={`q${q.id}`} style={{ marginRight: 8, marginTop: 3, flexShrink: 0 }} checked={selected}
                         onChange={() => setAnswer(q.id, opt.id, q.question_type)} />
-                      {opt.text}
+                      <span style={{ wordBreak: "break-word", overflowWrap: "anywhere" }}>{opt.text}</span>
                     </label>
                   )
                 })}
@@ -331,7 +331,7 @@ export default function Tests({ API, token, user }) {
                 }}>
                   <div style={{ display: "flex", alignItems: "flex-start", gap: 8, marginBottom: 8 }}>
                     <span style={{ fontSize: 18, flexShrink: 0 }}>{correct ? "✅" : "❌"}</span>
-                    <b style={{ fontSize: 15 }}>{idx + 1}. {q.text}</b>
+                    <b style={{ fontSize: 15, wordBreak: "break-word", overflowWrap: "anywhere" }}>{idx + 1}. {q.text}</b>
                   </div>
                   <div>
                     {q.options.sort((a, b) => a.order - b.order).map(opt => {
