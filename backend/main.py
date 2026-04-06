@@ -1,4 +1,5 @@
 from fastapi import FastAPI, Depends, HTTPException, Query
+from fastapi.security import OAuth2PasswordRequestForm
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 from typing import List, Optional
@@ -8,6 +9,8 @@ import models, schemas, auth
 models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
+
+
 
 app.add_middleware(
     CORSMiddleware,
@@ -22,7 +25,7 @@ app.add_middleware(
 @app.post("/register", response_model=schemas.UserOut)
 def register(user: schemas.UserCreate, db: Session = Depends(get_db)):
     if db.query(models.User).filter(models.User.username == user.username).first():
-        raise HTTPException(400, "Username already taken")
+        raise HTTPException(409, "Username already taken")
     new_user = models.User(username=user.username, password=auth.hash_password(user.password))
     db.add(new_user)
     db.commit()
@@ -38,6 +41,15 @@ def login(user: schemas.UserCreate, db: Session = Depends(get_db)):
     token = auth.create_token({"sub": db_user.username, "role": db_user.role})
     return {"access_token": token, "token_type": "bearer"}
 
+
+@app.post("/token", response_model=schemas.Token, include_in_schema=False)
+def token_for_swagger(form_data: OAuth2PasswordRequestForm = Depends(), db: Session = Depends(get_db)):
+    """Служебный эндпоинт для авторизации в Swagger UI (OAuth2 form data)."""
+    db_user = db.query(models.User).filter(models.User.username == form_data.username).first()
+    if not db_user or not auth.verify_password(form_data.password, db_user.password):
+        raise HTTPException(401, "Wrong username or password")
+    token = auth.create_token({"sub": db_user.username, "role": db_user.role})
+    return {"access_token": token, "token_type": "bearer"}
 
 @app.get("/me", response_model=schemas.UserOut)
 def me(user: models.User = Depends(auth.get_current_user)):
@@ -196,7 +208,7 @@ def create_test(data: schemas.TestCreate, db: Session = Depends(get_db),
     existing = db.query(models.Test).filter(
         models.Test.title.ilike(data.title.strip())).first()
     if existing:
-        raise HTTPException(400, f"Тест с названием «{data.title.strip()}» уже существует")
+        raise HTTPException(409, f"Тест с названием «{data.title.strip()}» уже существует")
     test = models.Test(title=data.title.strip())
     db.add(test)
     db.flush()
@@ -250,7 +262,7 @@ def update_test(test_id: int, data: schemas.TestCreate, db: Session = Depends(ge
         models.Test.id != test_id
     ).first()
     if existing:
-        raise HTTPException(400, f"Тест с названием «{data.title.strip()}» уже существует")
+        raise HTTPException(409, f"Тест с названием «{data.title.strip()}» уже существует")
     _build_test_from_data(test, data, db)
     db.commit()
     db.refresh(test)
@@ -331,7 +343,7 @@ def import_tests(
                 skipped += 1
                 continue
             else:
-                raise HTTPException(400, f"Тест «{item.title}» уже существует")
+                raise HTTPException(409, f"Тест «{item.title}» уже существует")
         test = models.Test(title=item.title.strip())
         db.add(test)
         db.flush()
@@ -355,7 +367,7 @@ def change_role(user_id: int, data: schemas.RoleUpdate, db: Session = Depends(ge
     if not user:
         raise HTTPException(404, "User not found")
     if data.role not in ["client", "admin"]:
-        raise HTTPException(400, "Role must be 'client' or 'admin'")
+        raise HTTPException(422, "Role must be 'client' or 'admin'")
     user.role = data.role
     db.commit()
     return {"ok": True, "username": user.username, "role": user.role}
