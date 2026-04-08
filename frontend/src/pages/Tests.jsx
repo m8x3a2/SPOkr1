@@ -19,9 +19,9 @@ const S = {
 
 function resultStyle(score, total) {
   const pct = total > 0 ? score / total : 0
-  if (pct === 1)   return { bg: "#f0fdf4", border: "#86efac", text: "#166534", emoji: "🎉" }
-  if (pct > 0)     return { bg: "#fefce8", border: "#fde047", text: "#854d0e", emoji: "📝" }
-  return             { bg: "#fef2f2", border: "#fca5a5", text: "#991b1b", emoji: "😔" }
+  if (pct === 1) return { bg: "#f0fdf4", border: "#86efac", text: "#166534", emoji: "🎉" }
+  if (pct > 0) return { bg: "#fefce8", border: "#fde047", text: "#854d0e", emoji: "📝" }
+  return { bg: "#fef2f2", border: "#fca5a5", text: "#991b1b", emoji: "😔" }
 }
 
 function Pagination({ page, pages, total, pageSize, onPage }) {
@@ -138,10 +138,11 @@ export default function Tests({ API, token, user }) {
     return all
   }
 
-  const loadTests = (page = 1, s = search, tags = combinedTags()) => {
+  const loadTests = (page = 1, s = search, tags = null) => {
+    const resolvedTags = tags ?? combinedTags()
     const params = new URLSearchParams({ page })
     if (s) params.set("search", s)
-    if (tags.length > 0) params.set("tags", tags.join(","))
+    if (resolvedTags.length > 0) params.set("tags", resolvedTags.join(","))
     fetch(`${API}/tests?${params}`).then(r => r.json()).then(d => {
       setTests(d.items || [])
       setTestsTotal(d.total || 0)
@@ -230,6 +231,10 @@ export default function Tests({ API, token, user }) {
         headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
         body: JSON.stringify({ test_id: activeTest.id, answers: serialized })
       })
+      if (!res.ok) {
+        alert("Ошибка при отправке ответов. Попробуйте ещё раз.")
+        return
+      }
       const data = await res.json()
       setResult({ score: data.score, total: activeTest.questions.length })
     } else {

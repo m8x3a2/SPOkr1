@@ -84,7 +84,7 @@ function QuestionEditor({ q, onChange, onRemove, index }) {
   const setSingleCorrect = (i) =>
     onChange({ ...q, options: q.options.map((o, idx) => ({ ...o, is_correct: idx === i })) })
   const addOption = () => {
-    if (q.options.length >= 50) return
+    if (q.options.length >= 30) return
     onChange({ ...q, options: [...q.options, { text: "", is_correct: false }] })
   }
   const removeOption = (i) => {
